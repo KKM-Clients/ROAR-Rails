@@ -1,0 +1,79 @@
+<% title "Rider Registration" %>
+<div class="row">
+  <div class="col-10">
+    <h3>Join us in Rangely Colorado for the <%= Time.current.year %> Rangely OHV Adventure Rally.</h3>
+
+    <p>Registration is now open online through August 6th, after that you may register at the event.</p>
+
+    <p>Registration includes an event t-shirt, guided rides (optional), breakfast on Friday and Saturday, dinner on Friday and all events lised
+    on the schedule, uless noted. Sack lunches for Friday and Saturday can be orders as you register.</p>
+
+    <div class="row bg-light p-2">
+      <div class="col">
+        <p><strong>Register Early:</strong></p>
+        <ul>
+          <li>Each rider 10 years and older - $70</li>
+          <li>Childern under the age of 10 are free</li>
+        </ul>
+      </div>
+      <div class="col">
+        <p><strong>After July 31st:</strong></p>
+        <ul>
+          <li>Each Rider 10 years of age and orlder - $75, and T-Shirt is not guaranteed</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>&nbsp;</p>
+    <p>Plese read and agree to the <strong><%= link_to "Rules & Regulation", rules_regs_index_path, :title => "Must read Ruls & Regulations" %></strong>
+    as-well-as the consent/waiver below. By Clicking the checkbox at bottom of page and registering you are confirming that you have read and agree to
+    the Rules & Regulation and the Consent/Waiver.</p>
+
+
+    <h3><span class="text-uppercase">Consent/Waiver</span></h3>
+    <p><span class="text-uppercase">Waiver of liability and indemnity agreement</p>
+    <p><span class="text-uppercase">Rangely area chamber of commerce release and Waiver of liability and indemnity agreemetn in consideration</span>
+    for being permitted to participate in the Rangely area chamber of commerce</p>
+
+    <p><span class="text-uppercase">The undersigined participants:</span></p>
+    <ol>
+      <li><span class="text-uppercase">Hereby release, waive, discharge and covenant not to sue</span> the Rangely Area Chamber of Commerce, their officers,
+      employees, any of the surrounding towns or cities, the State of Colorado, or volunteering assistants. All for the purpose herein referred to as "releases"
+      from all liability to the undersigned, their personal representatives, assigns, heirs and next of kin for any and all loss or damage, and any claim or
+      demands therefore on account of injury to the person or property or resulting in death of the undersigned, whether caused by the negligence of the releases
+      or otherwise while the undersigned is participating in event.</li>
+      <li><span class="text-uppercase">Hereby agree to indemnify and save and hold harmless</span> the releases and each of them from any loss, liability, damage,
+      or cost(including attorney's fees)they may incur due to the presence of the undersigned participating in the event and whether caused by the negligence of
+      the releases or otherwise.</li>
+      <li><span class="text-uppercase">The undersigned Participants</span> agree that while participating in the event, the use of alcohol or any substance
+      which affects the ability to operate or control his or her vehicle may be considered as hazardous to the health and safety of participants and spectators
+      is strictly forbidden.</li>
+      <li><span class="text-uppercase">The undersigned agrees</span>that he or she will not use or operate any vehicle in violation or contravention of any
+      city, county, state or federal laws, statuaries, ordinances or regulation and shall be personally liable for all fines and penalties for such
+      violations. Proper safety gear is required for all models of transportation.</li>
+      <li>Hereby assumes full responsibility for and risk of bodily injury, death, or property damage due to the negligence of releases or otherwise while
+      participation in the event.</li>
+    </ol>
+
+    <p><span class="text-uppercase">Each of the undersigned</span> expressly acknowledges and agrees that the following release, waiver, and indemnity
+    agreement is intended to be as broad and inclusive as is permitted by law of the state in which it is operated in and that if any portion thereof
+    is held invalid, it is agreed that the balance shall, notwithstanding, continue in full legal force and effect.</p>
+
+    <p><span class="text-uppercase">The undersigned has read and voluntarily signs the release and waiver of Liability and indemnity ageement</span>,and
+    further agrees that no oral representation, statement or inducements apart from the foregoing written agreement have been made.</p>
+
+    <p>I understand and accept that in the course of my attendance at the participation in the "Rangely OHV Adventure Rally" fil/photographs and/or illustration
+    may be used in any medium by the Rangely Area Chamber of Commerce  and all its related entities and agencies for advertising and promotional
+    purposes in any medium, without compensation to me.</p>
+
+
+    <form>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="chkAgree" onclick="goFurther()" value="1">
+        <label class="custom-control-label" for="chkAgree">By checking this box I agree and consent/waiver and comfirming I have read the Rules & Regulations</label>
+      </div>
+      <p>&nbsp;</p>
+      <input class="btn btn-md btn-primary" id="btnSubmit" name="submit" type="button" value="Submit" disabled>
+    </form>
+  </div>
+</div>
