@@ -1,2 +1,43 @@
-<h1>Riders#show</h1>
-<p>Find me in app/views/riders/show.html.erb</p>
+<% title "Thank You for Registring" %>
+
+<p>Please confirm the information below</p>
+
+<!-- wWhat do I need to know:
+    1. How many riders
+    2. How many lunches
+    3. Total price
+-->
+
+<div class="row">
+  <div class="col-5">
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <th>Number of Riders</th>
+          <td><%= @total_riders %></td>
+          <td>$<%= @trc %>
+        </tr>
+        <tr>
+        <tr>
+          <th>Number of Lunches</th>
+          <td><%= @total_lunch %></td>
+          <td>$<%=  @tlc %>
+        </tr>
+        <tr>
+          <th>Total Cost</th>
+          <td></td>
+          <td>$<%= @Grandtotal %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<div class="row">
+  <div class="col-sm-3 offset-sm-4">
+    <button class="btn btn-md btn-primary">Make Payment</button>
+  </div>
+</div>
+
+<p>&nbsp;</p>
