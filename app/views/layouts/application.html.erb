@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title> ROAR - <%= content_for?(:title) ? yield(:title) : 'Rangely OHV Adventuer Ride' %> </title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -22,24 +22,23 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" title="Check out our Trials" role="button" aria-haspopup="true" aria-expanded="false">Trail Information</a>
             <div class="dropdown-menu">
-              <%= link_to "Rules & Regulations", rules_regs_index_path, :class => "dropdown-item", :title =>"Rules & Regulations" %>
-              <%= link_to "Trail Rating", trail_rating_index_path, :class => "dropdown-item", :title =>"Trail Rating" %>
-              <%= link_to "Trails", trails_index_path, :class => "dropdown-item", :title =>"Trails" %>
+              <%= link_to "Rules & Regulations", rules_regs_url, :class => "dropdown-item", :title =>"Rules & Regulations" %>
+              <%= link_to "Trail Rating", trail_ratings_url, :class => "dropdown-item", :title =>"Trail Rating" %>
+              <%= link_to "Trails", trails_url, :class => "dropdown-item", :title =>"Trails" %>
             </div>
           </li>
-          <li class="nav-item"><%= link_to "Events", event_index_path, :class => "nav-link", :title => "Event Calendar" %></li>
-
+          <li class="nav-item"><%= link_to "Events", events_index_url, :class => "nav-link", :title => "Event Calendar" %></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" title="Registration to ride or be a vendor" role="button" aria-haspopup="true" aria-expanded="false">Registration</a>
             <div class="dropdown-menu">
-              <%= link_to "Rider", rider_registration_index_path, :class => "dropdown-item", :title =>"Register to Ride" %>
-              <%= link_to "Vendor", vendor_registration_index_path, :class => "dropdown-item", :title =>"Become a Vendor" %>
+              <%= link_to "Rider", riders_url, :class => "dropdown-item", :title =>"Register to Ride" %>
+              <%= link_to "Vendor", vendors_url, :class => "dropdown-item", :title =>"Become a Vendor" %>
             </div>
           </li>
           <!--<li class="nav-item"><a class="nav-link" href="#" title="Event Photos">Gallery</a></li> -->
 
-          <li class="nav-item"><%= link_to "Lodging", lodging_index_path, :class => "nav-link", :title => "Where to Stay" %></li>
-          <li class="nav-item"><%= link_to "Contact", contact_index_path, :class => "nav-link", :title => "Ask us a Question" %></li>
+          <li class="nav-item"><%= link_to "Lodging", lodging_index_url, :class => "nav-link", :title => "Where to Stay" %></li>
+          <li class="nav-item"><%= link_to "Contact", contact_index_url, :class => "nav-link", :title => "Ask us a Question" %></li>
         </ul>
 
         <address>
@@ -72,39 +71,39 @@
             <% if current_page?(controller: 'rules_regs', action: 'index') %>
               <ul>
                 <li>Rules & Regulations</li>
-                <li><%= link_to "Trail Rating", trail_rating_index_path, :title =>"Trail Rating" %></li>
-                <li><%= link_to "Trails", trails_index_path, :title =>"Trails" %></li>
+                <li><%= link_to "Trail Rating", trail_ratings_url, :title =>"Trail Rating" %></li>
+                <li><%= link_to "Trails", trails_url, :title =>"Trails" %></li>
               </ul>
-            <% elsif current_page?(controller: 'trail_rating', action: 'index') %>
+            <% elsif current_page?(controller: 'trail_ratings', action: 'index') %>
               <ul class="left-nav-ul">
-                <li><%= link_to "Rules & Regulations", rules_regs_index_path, :title =>"Rules & Regulations" %></li>
+                <li><%= link_to "Rules & Regulations", rules_regs_url, :title =>"Rules & Regulations" %></li>
                 <li>Trail Rating</li>
-                <li><%= link_to "Trails", trails_index_path, :title =>"Trails" %></li>
+                <li><%= link_to "Trails", trails_url, :title =>"Trails" %></li>
               </ul>
             <% elsif current_page?(controller: 'trails', action: 'index') %>
               <ul>
-                <li><%= link_to "Rules & Regulations", rules_regs_index_path, :title =>"Rules & Regulations" %></li>
-                <li><%= link_to "Trail Rating", trail_rating_index_path, :title =>"Trail Rating" %></li>
+                <li><%= link_to "Rules & Regulations", rules_regs_url, :title =>"Rules & Regulations" %></li>
+                <li><%= link_to "Trail Rating", trail_ratings_url, :title =>"Trail Rating" %></li>
                 <li>Trails</li>
               </ul>
-            <% elsif current_page?(controller: 'event', action: 'index') %>
+            <% elsif current_page?(controller: 'events', action: 'index') %>
               <ul>
                 <li><a href="https://drive.google.com/open?id=1RQvhrEWgagx_1-2hbGYv9KLfpGYihLs_irBb_dbnGz4" target="_blank" title="Download Vendor Registration Form">Vendor Registration Form</a></li>
-                <li class="nav-item"><%= link_to "Lodging", lodging_index_path, :title => "Where to Stay" %></li>
+                <li class="nav-item"><%= link_to "Lodging", lodging_index_url, :title => "Where to Stay" %></li>
               </ul>
             <% elsif :title == "Events" %>
               <ul>
                 <li>Rally Schedule - Not Availible</li>
                 <li><a href="https://docs.google.com/document/d/1rwOCSCjNm7k2hD3PZV6tgF4IwTQ5RzAmExI6cRzJoCs/edit?usp=sharing" title="Download & Print copy of Schedule" target="_blank">Print ROAR Schedule</a></li>
               </ul>
-            <% elsif current_page?(controller: 'rider_registration', action: 'index') %>
+            <% elsif current_page?(controller: 'riders', action: 'index') %>
               <ul>
                 <li>Rider Registration</li>
-                <li><%= link_to "Vendor Registration", vendor_registration_index_path, :title => "Registor to be a vendor" %></li>
+                <li><%= link_to "Vendor Registration", vendors_url, :title => "Registor to be a vendor" %></li>
               </ul>
-              <% elsif current_page?(controller: 'vendor_registration', action: 'index') %>
+              <% elsif current_page?(controller: 'vendors', action: 'index') %>
                 <ul>
-                  <li><%= link_to "Rider Registration", rider_registration_index_path, :title => "Registor to ride along with us" %></li>
+                  <li><%= link_to "Rider Registration", riders_url, :title => "Registor to ride along with us" %></li>
                   <li>Vendor Registration</li>
                 </ul>
             <% end %>

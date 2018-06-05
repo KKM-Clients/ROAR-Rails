@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  DFN: MyString
+  DLN: MyString
+  DMA: MyString
+  DC: MyString
+  DS: MyString
+  DZ: MyString
+  DCP: MyString
+  DEA: MyString
+  ECFN: MyString
+  ECLN: MyString
+  ECCP: MyString
+  ECT: MyString
+  ExpLev: MyString
+  RD: MyString
+  DTS: MyString
+  FLH: 1
+  FLT: 1
+  SLH: 1
+  SLT: 1
+  PT: MyString
+  RRCW: MyString
+
+two:
+  DFN: MyString
+  DLN: MyString
+  DMA: MyString
+  DC: MyString
+  DS: MyString
+  DZ: MyString
+  DCP: MyString
+  DEA: MyString
+  ECFN: MyString
+  ECLN: MyString
+  ECCP: MyString
+  ECT: MyString
+  ExpLev: MyString
+  RD: MyString
+  DTS: MyString
+  FLH: 1
+  FLT: 1
+  SLH: 1
+  SLT: 1
+  PT: MyString
+  RRCW: MyString
