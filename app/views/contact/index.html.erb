@@ -1,60 +1,36 @@
 <% title "Contact" %>
 
-<div class="row">
-  <div class="col-2">
+<h3>We Want to hear from you!</h3>
 
-    <strong>Rangley Chamber</strong><br />
-    255 E Main St Suite A<br />
-    Rangley, Co, 81648<br />
-    <abbr title="Phone">P:</abbr> (970) 675-5290
+<p>Do you have Questions, Commints and/or Concers about an event or trail? Let us know we want to help. </p>
+<p>If you are Registering for and event plese visit
+  our <strong><%= link_to "Rider Registration", riders_url, :title => "Use the Registration form" %></strong> page.</p>
+<p>&nbsp;</p>
 
+<form action="mailto:info@kaffeinatedkodemonkey.com" method="post">
+  <div class="form-group row">
+    <label for="NAME" class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control form-control-md" id="NAME" placeholder="Full Name">
+    </div>
   </div>
-  <div class="col-7">
-
-    <h3>We Want to hear from you!</h3>
-
-    <p>Do you have Questions, Commints and/or Concers about an event or trail? Let us know we want to help. </p>
-    <p>If you are Registering for and event plese visit
-      our <strong><%= link_to "Rider Registration", riders_url, :title => "Use the Registration form" %></strong> page.</p>
-    <p>&nbsp;</p>
-
-    <form action="mailto:info@kaffeinatedkodemonkey.com" method="post">
-      <div class="form-group row">
-        <label for="NAME" class="col-sm-2 col-form-label">Name:</label>
-        <div class="col-sm-5">
-          <input type="text" class="form-control form-control-md" id="NAME" placeholder="Full Name">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="EMAIL" class="col-sm-2 col-form-label">Email:</label>
-        <div class="col-sm-5">
-          <input type="email" class="form-control form-control-md" id="EMAIL" placeholder="Email Address">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="MESSAGE" class="col-sm-2 col-form-label">Message:</label>
-        <div class="col-sm-5">
-          <input type="textarea" class="form-control form-control-md" rows="5" id="MESSAGE">
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-5">
-          <button type="submit" class="btn btn-info">Sign in</button>
-        </div>
-      </div>
-    </form>
-
-
-      <p>&nbsp;</p>
-
-
-
-
-    <!--<div class="row">
-      <div class="col-md-1 offset-md-11">
-        <p><a href="#top" title="back to top"><img src="{{ site.baseurl }}/assets/images/arrow_page_jump.png"  class="img-fluid img-thumbnail" style="width: 80%;"></a></p>
-      </div>
-    </div> -->
-
+  <div class="form-group row">
+    <label for="EMAIL" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control form-control-md" id="EMAIL" placeholder="Email Address">
+    </div>
   </div>
-</div>
+  <div class="form-group row">
+    <label for="MESSAGE" class="col-sm-2 col-form-label">Message:</label>
+    <div class="col-sm-5">
+      <input type="textarea" class="form-control form-control-md" rows="5" id="MESSAGE">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-5">
+      <button type="submit" class="btn btn-info">Sign in</button>
+    </div>
+  </div>
+</form>
+
+<p>&nbsp;</p>

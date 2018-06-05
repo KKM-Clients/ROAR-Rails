@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">ROAR</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" title="Check out our Trials" role="button" aria-haspopup="true" aria-expanded="false">Trail Information</a>
+        <div class="dropdown-menu">
+          <%= link_to "Rules & Regulations", rules_regs_url, :class => "dropdown-item", :title =>"Rules & Regulations" %>
+          <%= link_to "Trail Rating", trail_ratings_url, :class => "dropdown-item", :title =>"Trail Rating" %>
+          <%= link_to "Trails", trails_url, :class => "dropdown-item", :title =>"Trails" %>
+        </div>
+      </li>
+      <li class="nav-item"><%= link_to "Events", events_index_url, :class => "nav-link", :title => "Event Calendar" %></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" title="Registration to ride or be a vendor" role="button" aria-haspopup="true" aria-expanded="false">Registration</a>
+        <div class="dropdown-menu">
+          <%= link_to "Rider", riders_url, :class => "dropdown-item", :title =>"Register to Ride" %>
+          <%= link_to "Vendor", vendors_url, :class => "dropdown-item", :title =>"Become a Vendor" %>
+        </div>
+      </li>
+      <!--<li class="nav-item"><a class="nav-link" href="#" title="Event Photos">Gallery</a></li> -->
+
+      <li class="nav-item"><%= link_to "Lodging", lodging_index_url, :class => "nav-link", :title => "Where to Stay" %></li>
+      <li class="nav-item"><%= link_to "Contact", contact_index_url, :class => "nav-link", :title => "Ask us a Question" %></li>
+    </ul>
+
+    <address>
+      <strong>Rangely Chambers</strong><br/>
+      <abbr title="phone">P: (970) 675-5290</abbr>
+    </address>
+
+  </div>
+</nav>
