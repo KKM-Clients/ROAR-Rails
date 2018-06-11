@@ -1,0 +1,16 @@
+<head>
+  <title> ROAR - <%= content_for?(:title) ? yield(:title) : 'Rangely OHV Adventuer Ride' %> </title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+
+  <!-- Square -->
+  <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+  
+  <%= javascript_include_tag 'application' %>
+
+
+
+</head>

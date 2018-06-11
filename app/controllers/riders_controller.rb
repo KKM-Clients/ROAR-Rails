@@ -1,7 +1,5 @@
 class RidersController < ApplicationController
   def index
-    #@riders = Rider.all
-    #@rider = Rider.new
   end
 
   def new
@@ -30,6 +28,8 @@ class RidersController < ApplicationController
     #  pass = @rider.pass
     #end
 
+    #@trc.total_riders(@rider.pass)
+
     @total_riders = 1
     @trc = @total_riders  * 70
 
@@ -46,6 +46,21 @@ class RidersController < ApplicationController
 
     @Grandtotal = @trc + @tlc
 
+    random = SecureRandom.urlsafe_base64
+
+    rider =
+    { :totle_rider => @trc,
+      :total_lunch => @tlc,
+      :grand_total => @Grandtotal
+    }
+    render json: rider 
+
+    #respond_to do |format|
+
+      #format.html # show.html.erb
+      #format.json { render json: rider }
+
+    # end
   end
 
   def rider_params

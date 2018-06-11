@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'square/index'
   get 'events/index'
   root "home#index"
 
