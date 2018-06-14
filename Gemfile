@@ -57,8 +57,14 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+#run env files
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#respond_to or respond_with for Json
+gem "responders"
 
 #bootstrap 4
 gem 'bootstrap', '~> 4.1.1'

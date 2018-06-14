@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'square/index'
   get 'events/index'
   root "home#index"
 
@@ -42,6 +41,7 @@ Rails.application.routes.draw do
   resources :riders
   resources :vendors
   resources :lodging
+  resources :square
 
   get 'contact/index'
 

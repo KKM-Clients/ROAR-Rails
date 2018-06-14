@@ -12,55 +12,24 @@ class RidersController < ApplicationController
     if @rider.save
       flash[:success] = "You have successfully created a new Rider!"
 
-      #redirect_to :controller => 'squarecheckout', :action => 'index'
-      redirect_to @rider
+      pass = @rider.pass
+
+      flh = @rider.FLH.to_i
+      flt = @rider.FLT.to_i
+      slh = @rider.SLH.to_i
+      slt = @rider.SLT.to_i
+
+      lunch = flh + flt + slh + slt
+
+      redirect_to :controller => 'square', :action => 'index', id: @rider.id, num_pass: pass, num_lunches: lunch
+      #redirect_to @rider
     else
       render :new
     end
   end
 
   def show
-    @rider = Rider.last
 
-    #if @rider.pass.cell.blank?
-    #  pass = 0
-    #else
-    #  pass = @rider.pass
-    #end
-
-    #@trc.total_riders(@rider.pass)
-
-    @total_riders = 1
-    @trc = @total_riders  * 70
-
-    flh = @rider.FLH.to_i
-    flt = @rider.FLT.to_i
-    slh = @rider.SLH.to_i
-    slt = @rider.SLT.to_i
-
-    @total_lunch = flh + flt + slh + slt
-    @total_ham = flh + slh
-    @total_turkey = flt + slt
-
-    @tlc = @total_lunch * 8
-
-    @Grandtotal = @trc + @tlc
-
-    random = SecureRandom.urlsafe_base64
-
-    rider =
-    { :totle_rider => @trc,
-      :total_lunch => @tlc,
-      :grand_total => @Grandtotal
-    }
-    render json: rider 
-
-    #respond_to do |format|
-
-      #format.html # show.html.erb
-      #format.json { render json: rider }
-
-    # end
   end
 
   def rider_params
