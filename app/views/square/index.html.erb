@@ -8,17 +8,13 @@
     3. Total price
 -->
 
-<!-- <p>What is the id: <%= @rider_id %></p> -->
-
-<!-- <p>Whats in an array: <%=  @order %></p> -->
-
 <div id="sq-ccbox">
   <!--
     You should replace the action attribute of the form with the path of
     the URL you want to POST the nonce to (for example, "/process-card")
   -->
   <%= form_with scope: :square, url: square_index_path, :id => "nonce-form", novalidate: true do |f| %>
-
+    <%= hidden_field_tag(:sq_email, @email) %>
     <div class="row">
       <div class="col-5">
         <div class="form-group row">
