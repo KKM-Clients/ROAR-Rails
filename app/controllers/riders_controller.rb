@@ -7,11 +7,11 @@ class RidersController < ApplicationController
   end
 
   def create
-    @rider = Rider.new(rider_params)
+    @rider = current_driver.riders.build(rider_params)
 
     if @rider.save
       flash[:success] = "You have successfully created a new Rider!"
-
+      
       pass = @rider.pass.to_i + 1
 
       flh = @rider.FLH.to_i

@@ -18,7 +18,7 @@
     the URL you want to POST the nonce to (for example, "/process-card")
   -->
   <%= form_with scope: :square, url: square_index_path, :id => "nonce-form", novalidate: true do |f| %>
-    
+
     <div class="row">
       <div class="col-5">
         <div class="form-group row">
@@ -72,8 +72,6 @@
             <input type="text" class="form-control" id="sq-postal-code" placeholder="Postal Code">
           </div>
         </div>
-
-
 
         <div class="form-group row">
           <div class="col-sm-6 offset-sm-6">
