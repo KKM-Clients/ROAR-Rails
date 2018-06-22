@@ -29,6 +29,7 @@ class SquareController < ApplicationController
     amount = params[:sq_total].to_i * 100
 
     if !nonce.empty?
+
       transactions_api = SquareConnect::TransactionsApi.new
 
       request_body = {

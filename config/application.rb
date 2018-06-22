@@ -2,6 +2,11 @@ require_relative 'boot'
 
 require 'rails/all'
 
+# Load the gem
+#require 'square_connect'
+require 'securerandom'
+
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -18,5 +23,14 @@ module ROARR5
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Setup authorization
+    SquareConnect.configure do |config|
+      # Configure OAuth2 access token for authorization: oauth2
+
+      config.access_token = ENV["SQUARE_ACCESS_TOKEN"]
+      config.location_id = ENV["SQUARE_LOCATION_ID"]
+      config.application_id = ENV["SQUARE_APPLICATION_ID"]
+    end
   end
 end

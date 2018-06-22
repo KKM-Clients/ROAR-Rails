@@ -1,9 +1,9 @@
 require 'square_connect'
 
-access_token = 'sandbox-sq0atb-h6g3t46c-Iymqs0X3PRwJQ'
+#access_token = 'sandbox-sq0atb-h6g3t46c-Iymqs0X3PRwJQ'
 
 SquareConnect.configure do |config|
-  config.access_token = access_token
+  config.access_token = ENV["SQUARE_ACCESS_TOKEN"]
 end
 
 locations_api = SquareConnect::LocationsApi.new
