@@ -12,7 +12,7 @@ class RidersController < ApplicationController
     if @rider.save
       flash[:success] = "You have successfully created a new Rider!"
 
-      pass = @rider.pass
+      pass = @rider.pass.to_i + 1
 
       flh = @rider.FLH.to_i
       flt = @rider.FLT.to_i

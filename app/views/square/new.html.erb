@@ -8,39 +8,52 @@
         You should replace the action attribute of the form with the path of
         the URL you want to POST the nonce to (for example, "/process-card")
       -->
-
       <form id="nonce-form" novalidate action="path/to/payment/processing/page" method="post">
-        <div class="form-group row">
-          <label for="sq-card-number" class="col-sm-5 col-form-label">Card Number:</label>
-          <div class="col-sm-5">
-            <input type="text" class="form-control" id="sq-card-number" placeholder="Card Number">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="sq-cvv" class="col-sm-5 col-form-label">CVV:</label>
-          <div class="col-sm-5">
-            <input type="text" class="form-control" id="sq-cvv" placeholder="CVV">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="sq-expiration-date" class="col-sm-5 col-form-label">Expiration Date:</label>
-          <div class="col-sm-5">
-            <input type="text" class="form-control" id="sq-expiration-date" placeholder="Expiration Date">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="sq-postal-code" class="col-sm-5 col-form-label">Postal Code:</label>
-          <div class="col-sm-5">
-            <input type="text" class="form-control" id="sq-postal-code" placeholder="Postal Code">
-          </div>
-        </div>
+        Pay with a Credit Card
+        <table>
+          <tbody>
+            <tr>
+              <td>Card Number:</td>
+              <td><div id="sq-card-number"></div></td>
+            </tr>
+            <tr>
+              <td>CVV:</td>
+              <td><div id="sq-cvv"></div></td>
+            </tr>
+            <tr>
+              <td>Expiration Date: </td>
+              <td><div id="sq-expiration-date"></div></td>
+            </tr>
+            <tr>
+              <td>Postal Code:</td>
+              <td><div id="sq-postal-code"></div></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">
+                  Pay with card
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button id="sq-creditcard" class="btn btn-md btn-primary" onclick="requestCardNonce(event)">
-              Pay with card
-            </button>
-          </div>
-        </div>
-
+        <!--
+          After a nonce is generated it will be assigned to this hidden input field.
+        -->
+        <input type="hidden" id="card-nonce" name="nonce">
       </form>
+    </div>
+
+    <div id="sq-walletbox">
+      Pay with a Digital Wallet
+      <div id="sq-apple-pay-label" class="wallet-not-enabled">Apple Pay for Web not enabled</div>
+      <!-- Placeholder for Apple Pay for Web button -->
+      <button id="sq-apple-pay" class="button-apple-pay"></button>
+
+      <div id="sq-masterpass-label" class="wallet-not-enabled">Masterpass not enabled</div>
+      <!-- Placeholder for Masterpass button -->
+      <button id="sq-masterpass" class="button-masterpass"></button>
+    </div>
+  </div>
+</div>

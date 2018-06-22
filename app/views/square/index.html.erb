@@ -12,42 +12,81 @@
 
 <!-- <p>Whats in an array: <%=  @order %></p> -->
 
-<hr />
-<%= form_tag do %>
-  <%= hidden_field_tag('Bearer', 'sandbox-sq0atb-h6g3t46c-Iymqs0X3PRwJQ') %>
-  <div class="form-group row">
-    <%= label_tag(:num_riders,"Number of Riders:", class: "col-sm-2 col-form-label") %>
-    <div class="col-sm-2">
-      <%= text_field_tag(:num_riders, @total_riders, class:"form-control-plaintext", readonly: true) %>
-    </div>
-    <div class="col-sm-2">
-      <%= text_field_tag(:rider_cost, number_to_currency(@trc), class:"form-control-plaintext", readonly: true) %>
-    </div>
-  </div>
-  <div class="form-group row">
-    <%= label_tag(:num_lunches,"Number of Lunches:", class: "col-sm-2 col-form-label") %>
-    <div class="col-sm-2">
-      <%= text_field_tag(:num_lunches, @total_lunch, class:"form-control-plaintext", readonly: true) %>
-    </div>
-    <div class="col-sm-2">
-      <%= text_field_tag(:lunch_cost, number_to_currency(@tlc), class:"form-control-plaintext", readonly: true) %>
-    </div>
-  </div>
-  <hr />
-  <div class="form-group row">
-    <%= label_tag(:grand_total,"Grand Total:", class: "col-sm-4 col-form-label") %>
-    <div class="col-sm-2">
-      <%= text_field_tag(:grand_total, number_to_currency(@Grandtotal), class:"form-control-plaintext", readonly: true) %>
-    </div>
-  </div>
-  <hr />
-  <p>&nbsp;</p>
-  <div class="row">
-    <div class="col-sm-4 offset-sm-4">
-      <%= submit_tag("Confirm Checkout", class: "btn btn-md btn-primary") %>
-      <!-- <%= link_to "Confirm Checkout", square_index_url, class: "btn btn-md btn-primary" %> -->
-    </div>
-  </div>
-<% end %>
+<div id="sq-ccbox">
+  <!--
+    You should replace the action attribute of the form with the path of
+    the URL you want to POST the nonce to (for example, "/process-card")
+  -->
+  <%= form_with scope: :square, url: square_index_path, :id => "nonce-form", novalidate: true do |f| %>
+    
+    <div class="row">
+      <div class="col-5">
+        <div class="form-group row">
+          <%= f.label(:sq_riders,"Number of Riders:", class: "col-sm-5 col-form-label") %>
+          <div class="col-sm-2">
+            <%= text_field_tag(:sq_riders, @total_riders, class:"form-control-plaintext", readonly: true) %>
+          </div>
+          <div class="col-sm-2">
+            <%= text_field_tag(:sq_rcost, @trc, class:"form-control-plaintext", readonly: true) %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label(:sq_lunches,"Number of Lunches:", class: "col-sm-5 col-form-label") %>
+          <div class="col-sm-2">
+            <%= text_field_tag(:sq_lunches, @total_lunch, class:"form-control-plaintext", readonly: true) %>
+          </div>
+          <div class="col-sm-2">
+            <%= text_field_tag(:sq_lcost, @tlc, class:"form-control-plaintext", readonly: true) %>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group row">
+          <%= f.label(:sq_total,"Grand Total:", class: "col-sm-6 col-form-label") %>
+          <div class="col-sm-3 offset-sm-1">
+            <%= text_field_tag(:sq_total, @Grandtotal, class:"form-control-plaintext", readonly: true) %>
+          </div>
+        </div>
+      </div>
+      <div class="col-7">
+        <div class="form-group row">
+          <label for="sq-card-number" class="col-sm-5 col-form-label">Card Number:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="sq-card-number" placeholder="Card Number">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sq-cvv" class="col-sm-5 col-form-label">CVV:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="sq-cvv" placeholder="CVV">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sq-expiration-date" class="col-sm-5 col-form-label">Expiration Date:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="sq-expiration-date" placeholder="Expiration Date">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sq-postal-code" class="col-sm-5 col-form-label">Postal Code:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="sq-postal-code" placeholder="Postal Code">
+          </div>
+        </div>
 
-<p>&nbsp;</p>
+
+
+        <div class="form-group row">
+          <div class="col-sm-6 offset-sm-6">
+            <button id="sq-creditcard" class="btn btn-md btn-primary" onclick="requestCardNonce(event)">
+              Pay with card
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      After a nonce is generated it will be assigned to this hidden input field.
+    -->
+    <input type="hidden" id="card-nonce" name="nonce">
+  <% end %>
+</div>
