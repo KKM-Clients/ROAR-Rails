@@ -2,18 +2,20 @@ class SquareController < ApplicationController
   #before_action :set_order, only: [:show, :edit, :update, :destroy]
   #respond_to :html, :json
 
+  $rider = Rider.last
+
 
   def index
-    @rider = Rider.last
-    @email = @rider.DEA
-    @zipcode = @rider.DZ
+    #$rider = Rider.last
+    @email = $rider.DEA
+    @zipcode = $rider.DZ
 
-    pass = @rider.pass.to_i + 1
+    pass = $rider.pass.to_i + 1
 
-    flh = @rider.FLH.to_i
-    flt = @rider.FLT.to_i
-    slh = @rider.SLH.to_i
-    slt = @rider.SLT.to_i
+    flh = $rider.FLH.to_i
+    flt = $rider.FLT.to_i
+    slh = $rider.SLH.to_i
+    slt = $rider.SLT.to_i
 
     lunch = flh + flt + slh + slt
 
@@ -27,7 +29,6 @@ class SquareController < ApplicationController
   end
 
   def create
-    @rider = Rider.last
 
     #Set variables
     nonce = params[:nonce]
@@ -56,21 +57,21 @@ class SquareController < ApplicationController
         :card_nonce => nonce,
 
         #An optional ID you can associate with the transaction for your own purposes This value cannot exceed 40 characters.
-        :reference_id => (@rider.id.to_s + @rider.DZ),
+        :reference_id => ($rider.id.to_s + $rider.DZ),
 
         :billing_address => {
-          :address_line_1 => @rider.DMA,
-          :locality => @rider.DC,
-          :administrative_district_level_1 => @rider.DS,
-          :postal_code => @rider.DZ
+          :address_line_1 => $rider.DMA,
+          :locality => $rider.DC,
+          :administrative_district_level_1 => $rider.DS,
+          :postal_code => $rider.DZ
         },
 
-        :buyer_email_address => @rider.DEA
+        :buyer_email_address => $rider.DEA
 
       }
 
       location_id = ENV["SQUARE_LOCATION_ID"]
-      
+
       # The SDK throws an exception if a Connect endpoint responds with anything besides 200 (success).
       # This block catches any exceptions that occur from the request.
       begin
@@ -88,7 +89,7 @@ class SquareController < ApplicationController
       @amount = resp.transaction.tenders[0].amount_money.amount / 100
 
       #add add refid to db as Regid
-      Rider.update(@rider.id, :regid => @refid)
+      Rider.update($rider.id, :regid => @refid)
 
 
       #raise @resp.inspect
@@ -108,7 +109,7 @@ class SquareController < ApplicationController
 
   def show
     @rid = Rider.last
-    @rid = @rider.DEA
+    @rid = $rider.DEA
 
   end
 end
