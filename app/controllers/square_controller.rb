@@ -7,7 +7,7 @@ class SquareController < ApplicationController
     @rider = Rider.last
     @email = @rider.DEA
     @zipcode = @rider.DZ
-    #random = SecureRandom.urlsafe_base64
+
     pass = @rider.pass.to_i + 1
 
     flh = @rider.FLH.to_i
@@ -24,9 +24,6 @@ class SquareController < ApplicationController
     @Grandtotal = @trc + @tlc     #Grand total of rider + lunches
 
 
-    #@order = {"number of riders:" => @total_riders , "cost" => @trc}
-
-    #respond_with(@order)
   end
 
   def create
@@ -34,8 +31,8 @@ class SquareController < ApplicationController
 
     #Set variables
     nonce = params[:nonce]
-    amount = params[:sq_total].to_i * 100
     location_id = ENV["SQUARE_LOCATION_ID"]
+    amount = params[:sq_total].to_i * 100
 
     if !nonce.empty?
 
