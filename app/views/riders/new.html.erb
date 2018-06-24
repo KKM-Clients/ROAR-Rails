@@ -24,14 +24,14 @@
                       <div class="form-group row">
                         <!-- First Name -->
                         <div class="col">
-                          <%= f.label(:DFN, "Drives First Name:", class: "col-sm-3 col-form-label col-form-label-md") %>
+                          <%= f.label(:DFN, "First Name:", class: "col-sm-3 col-form-label col-form-label-md") %>
                           <div class="col-sm-5">
                             <%= f.text_field(:DFN, {class: "form-control", placeholder: "Drivers First Name"}) %>
                           </div>
                         </div>
                         <!-- Last name -->
                         <div class="col">
-                          <%= f.label(:DLN, "Drives Last Name:", class: "col-sm-3 col-form-label-md") %>
+                          <%= f.label(:DLN, "Last Name:", class: "col-sm-3 col-form-label-md") %>
                           <div class="col-sm-5">
                             <%= f.text_field(:DLN, {class: "form-control", placeholder: "Drivers Last Name"}) %>
                           </div>
@@ -173,7 +173,47 @@
                 </div>
                 <div id="collapsePass" class="collapse" aria-labelledby="headingPass" data-parent="#regForm">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <!-- Passenger Information -->
+                    <%= f.fields_for :passengers do |ff| %>
+                    <fieldset>
+                      <!-- Driver Name -->
+                      <div class="form-group row">
+                        <!-- First Name -->
+                        <div class="col">
+                          <%= ff.label(:fname, "First Name:", class: "col-sm-3 col-form-label col-form-label-md") %>
+                          <div class="col-sm-5">
+                            <%= ff.text_field(:fname, {class: "form-control", placeholder: "Passenger First Name"}) %>
+                          </div>
+                        </div>
+                        <!-- Last name -->
+                        <div class="col">
+                          <%= ff.label(:lname, "Last Name:", class: "col-sm-3 col-form-label-md") %>
+                          <div class="col-sm-5">
+                            <%= ff.text_field(:lname, {class: "form-control", placeholder: "Passenger Last Name"}) %>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Age & T-Shirt -->
+                      <div class="form-group row">
+                        <!-- Passenger Age -->
+                        <div class="col">
+                          <%= ff.label(:age, "Passenger Age:", class: "col-sm-3 col-form-label") %>
+                          <div class="col-sm-5">
+                            <%= ff.select :age, options_for_select([["Select Age", ""],["under  10", "-10"],["Over - 10", "+10"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
+                          </div>
+                        </div>
+                        <!-- T-Shirt Size -->
+                        <div class="col">
+                          <%= ff.label(:tshirt, "T-Shirt Size:", class: "col-sm-3 col-form-label") %>
+                          <div class="col-sm-5">
+                            <%= ff.select :tshirt, options_for_select([["No T-Shirt", "NA"],["Small", "S"],["Medium", "M"],["Large", "L"],["X Large", "XL"],["XX Large", "XXL"],["XXX Large", "XXXL"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <hr />
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -231,24 +271,11 @@
                           <div class="col-sm-5">
                             <%= f.select :RD, options_for_select([["All Dates", "All"],["August 9th", "Thursday"],["August 10th", "Friday"],["August 11th", "Saturday"],
                               ["August 9 - 10", "Thursday & Friday"], ["August 10 - 11", "Friday & Saturday"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                            <!--<select id="RD" class="form-control">
-                              <option selected>Select Dates</option>
-                              <option value="Aug 9th">Thursday, August 9th</option>
-                              <option value="Aug 10th">Friday, August 10th</option>
-                              <option value="Aug 11th">Saturday, August 11th</option>
-                            </select> -->
                           </div>
                         </div>
                         <!-- Payment Type -->
                         <div class="col">
                           <input type="hidden" value="WP" id="PT" />
-                          <!-- <label for="PT" value="1">Payment Type</label>
-                          <select id="PT" class="form-control">
-                            <option value="WP" selected>Web/Online Payment</option>
-                            <option value="EP">EventBright</option>
-                            <option value="CC">Credit Card</option>
-                            <option value="Cash">Cash</option>
-                          </select> -->
                         </div>
                       </div>
                     </fieldset>

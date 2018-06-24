@@ -1,18 +1,12 @@
 <% title "Registration Conformation" %>
 
 
-<table>
-  <% @resp.each do |output| %>
-  <tr>
-      <td><%= output[0] %></td>
-      <td><%= output[1] %></td>
-      <td><%= output[2] %></td>
-      <td><%= output[3] %></td>
-      <td><%= output[4] %></td>
-      <td><%= output[5] %></td>
-      ...
-  </tr>
-  <%end%>
-</table>
+<!-- <p>tenders: <% @trans %></p> -->
 
-<p>testing page</p>
+<h3>Welcome to our annual ROA Event.</h3>
+
+<p>We Look forward to seeing on the trails soon and sharing our memories with you.</p>
+
+<p>Your <strong>order #: <%= @refid %></strong>, please retain a copy of it for your recoreds.</p>
+
+<h4>Total amount paid in full: <%= number_to_currency(@amount) %>.</h4>

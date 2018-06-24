@@ -42,7 +42,11 @@ class SquareController < ApplicationController
       transactions_api = SquareConnect::TransactionsApi.new
 
       request_body = {
-        :card_nonce => nonce,
+        # Every payment you process for a given business have a unique idempotency key.
+        # If you're unsure whether a particular payment succeeded, you can reattempt
+        # it with the same idempotency key without worrying about double charging
+        # the buyer.
+        :idempotency_key => SecureRandom.uuid,
 
         # Monetary amounts are specified in the smallest unit of the applicable currency.
         # This amount is in cents. It's also hard-coded for $1, which is not very useful.
@@ -51,20 +55,20 @@ class SquareController < ApplicationController
           :currency => 'USD'
         },
 
-        # Every payment you process for a given business have a unique idempotency key.
-        # If you're unsure whether a particular payment succeeded, you can reattempt
-        # it with the same idempotency key without worrying about double charging
-        # the buyer.
-        :idempotency_key => SecureRandom.uuid,
+        # A nonce generated from the `SqPaymentForm` that represents the card to charge.
+        :card_nonce => nonce,
 
-        :buyer_email_address => @rider.DEA,
+        #An optional ID you can associate with the transaction for your own purposes This value cannot exceed 40 characters.
+        :reference_id => (@rider.id.to_s + @rider.DZ),
 
         :billing_address => {
           :address_line_1 => @rider.DMA,
           :locality => @rider.DC,
           :administrative_district_level_1 => @rider.DS,
           :postal_code => @rider.DZ
-        }
+        },
+
+        :buyer_email_address => @rider.DEA
 
       }
 
@@ -76,10 +80,19 @@ class SquareController < ApplicationController
         raise "Error encountered while charging card: #{e.message}"
       end
 
-      #puts resp
-
       @resp = resp
 
+      #@trans = resp.transaction
+
+      @refid = resp.transaction.reference_id
+
+      @amount = resp.transaction.tenders[0].amount_money.amount / 100
+
+      #add add refid to db as Regid
+      Rider.update(@rider.id, :regid => @refid)
+
+
+      #raise @resp.inspect
 
 
       # Send receipt email to user
@@ -97,6 +110,6 @@ class SquareController < ApplicationController
   def show
     @rid = Rider.last
     @rid = @rider.DEA
-    
+
   end
 end
