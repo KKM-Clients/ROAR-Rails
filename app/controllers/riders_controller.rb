@@ -12,17 +12,7 @@ class RidersController < ApplicationController
     if @rider.save
       flash[:success] = "You have successfully created a new Rider!"
 
-      pass = @rider.pass.to_i + 1
-
-      flh = @rider.FLH.to_i
-      flt = @rider.FLT.to_i
-      slh = @rider.SLH.to_i
-      slt = @rider.SLT.to_i
-
-      lunch = flh + flt + slh + slt
-
-      redirect_to :controller => 'square', :action => 'index', id: @rider.id, num_pass: pass, num_lunches: lunch
-      #redirect_to @rider
+      redirect_to :controller => 'square', :action => 'index'
     else
       render :new
     end

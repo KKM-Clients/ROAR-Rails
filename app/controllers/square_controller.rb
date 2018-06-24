@@ -2,19 +2,26 @@ class SquareController < ApplicationController
   #before_action :set_order, only: [:show, :edit, :update, :destroy]
   #respond_to :html, :json
 
+
   def index
-    #@rider_id = params[:id]
+    @rider = Rider.last
+    @email = @rider.DEA
+    @zipcode = @rider.DZ
     #random = SecureRandom.urlsafe_base64
+    pass = @rider.pass.to_i + 1
 
-    pass = params[:num_pass].to_i
-    lunch = params[:num_lunches].to_i
+    flh = @rider.FLH.to_i
+    flt = @rider.FLT.to_i
+    slh = @rider.SLH.to_i
+    slt = @rider.SLT.to_i
 
-    @total_riders = pass      #total number of riders above 10 pluse driver
+    lunch = flh + flt + slh + slt
+
+    @total_riders = pass          #total number of riders above 10 pluse driver
     @trc = @total_riders * 70     #total rider cost
     @total_lunch = lunch          #total number of lunches
     @tlc = @total_lunch * 8       #total lunch cost
     @Grandtotal = @trc + @tlc     #Grand total of rider + lunches
-
 
 
     #@order = {"number of riders:" => @total_riders , "cost" => @trc}
@@ -23,6 +30,7 @@ class SquareController < ApplicationController
   end
 
   def create
+    @rider = Rider.last
 
     #Set variables
     nonce = params[:nonce]
@@ -47,10 +55,18 @@ class SquareController < ApplicationController
         # If you're unsure whether a particular payment succeeded, you can reattempt
         # it with the same idempotency key without worrying about double charging
         # the buyer.
-        :idempotency_key => SecureRandom.uuid
+        :idempotency_key => SecureRandom.uuid,
+
+        :buyer_email_address => @rider.DEA,
+
+        :billing_address => {
+          :address_line_1 => @rider.DMA,
+          :locality => @rider.DC,
+          :administrative_district_level_1 => @rider.DS,
+          :postal_code => @rider.DZ
+        }
+
       }
-
-
 
       # The SDK throws an exception if a Connect endpoint responds with anything besides 200 (success).
       # This block catches any exceptions that occur from the request.
@@ -60,23 +76,27 @@ class SquareController < ApplicationController
         raise "Error encountered while charging card: #{e.message}"
       end
 
-      puts resp
+      #puts resp
+
+      @resp = resp
+
 
 
       # Send receipt email to user
-      ReceiptMailer.charge_email(params[:email],data).deliver_now if Rails.env == "development"
+      #ReceiptMailer.charge_email(params[:email],data).deliver_now if Rails.env == "development"
 
-      render json: {:status => 200}
+      render :show
+      #render json: {:status => 200}
     else
       flash[:notice] = "Invalied CC please resubmit."
 
-      render :index
+      render :new
     end
-
-    render :show
   end
 
   def show
-
+    @rid = Rider.last
+    @rid = @rider.DEA
+    
   end
 end
