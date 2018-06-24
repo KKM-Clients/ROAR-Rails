@@ -70,7 +70,7 @@ class SquareController < ApplicationController
 
       }
 
-      location_id = ENV["SQUARE_LOCATION_ID"]
+      location_id = "CBASEL2Cz6BUt51iiMmFgSZd4qkgAQ"
 
       # The SDK throws an exception if a Connect endpoint responds with anything besides 200 (success).
       # This block catches any exceptions that occur from the request.
