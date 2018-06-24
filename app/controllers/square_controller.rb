@@ -27,6 +27,7 @@ class SquareController < ApplicationController
     #Set variables
     nonce = params[:nonce]
     amount = params[:sq_total].to_i * 100
+    location_id = ENV["SQUARE_LOCATION_ID"]
 
     if !nonce.empty?
 
@@ -49,7 +50,7 @@ class SquareController < ApplicationController
         :idempotency_key => SecureRandom.uuid
       }
 
-      location_id = ENV["SQUARE_LOCATION_ID"]
+
 
       # The SDK throws an exception if a Connect endpoint responds with anything besides 200 (success).
       # This block catches any exceptions that occur from the request.
