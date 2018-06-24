@@ -2,6 +2,7 @@ class SquareController < ApplicationController
   #before_action :set_order, only: [:show, :edit, :update, :destroy]
   #respond_to :html, :json
 
+
   def index
     @rider = Rider.last
     @email = @rider.DEA
@@ -29,7 +30,6 @@ class SquareController < ApplicationController
   end
 
   def create
-
     @rider = Rider.last
 
     #Set variables
@@ -76,22 +76,28 @@ class SquareController < ApplicationController
         raise "Error encountered while charging card: #{e.message}"
       end
 
-      puts resp
+      #puts resp
+
+      @resp = resp
+
+
 
       # Send receipt email to user
-      ReceiptMailer.charge_email(params[:email],data).deliver_now if Rails.env == "development"
+      #ReceiptMailer.charge_email(params[:email],data).deliver_now if Rails.env == "development"
 
-      render json: {:status => 200}
+      render :show
+      #render json: {:status => 200}
     else
       flash[:notice] = "Invalied CC please resubmit."
 
       render :new
     end
-
-    render :show
   end
 
   def show
+    @rid = Rider.last
+    @rid = @rider.DEA
+
 
   end
 end
