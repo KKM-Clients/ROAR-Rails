@@ -1,43 +1,47 @@
-<% title "Thank You for Registring" %>
+<% title "Registration Conformation" %>
 
-<p>Please confirm the information below</p>
+<h3>Thank you for joining us on Aug 9-11 for our annual ROAR Event</h3>
 
-<!-- wWhat do I need to know:
-    1. How many riders
-    2. How many lunches
-    3. Total price
--->
+<p>We Look forward to seeing on the trails soon and sharing our memories with you.</p>
+<p> Here is an electronic Reciept/Comfromation. Please print a copy and bring it with you to checkin.</p>
 
 <div class="row">
-  <div class="col-5">
+  <div class="col-7 pt-4">
     <div class="table-responsive">
-      <table class="table">
+      <table class="table table-bordered">
         <tr>
-          <th>Number of Riders</th>
-          <td><%= @total_riders %></td>
-          <td>$<%= @trc %>
+          <th colspan="3" class="text-center"><h3>Registration Receipt</h3></th>
         </tr>
         <tr>
-        <tr>
-          <th>Number of Lunches</th>
-          <td><%= @total_lunch %></td>
-          <td>$<%=  @tlc %>
+          <th width="18%">Item</th>
+          <th width="15%">Quantity</th>
+          <th width="15%">Totals</th>
         </tr>
         <tr>
-          <th>Total Cost</th>
-          <td></td>
-          <td>$<%= @gt %></td>
+          <td class="text-left">Riders under 10</td>
+          <td><%= @pass_free %></td>
+          <td class="text-uppercase"><strong><em>Ride Free</em></strong></td>
+        </tr>
+        <tr>
+          <td class="text-left">Riders over 10</td>
+          <td><%= @pass_pay %> <small>x @70.00</small></td>
+          <td><%= @trc %></td>
+        </tr>
+        <tr>
+          <td class="text-left">Lunches</td>
+          <td><%= @lunch %> <small>X @8.00</small></td>
+          <td><%= @tlc %></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-left">Grand Total</td>
+          <td><%= number_to_currency(@Grandtotal) %></td>
         </tr>
       </table>
     </div>
   </div>
 </div>
-
-<p>&nbsp;</p>
 <div class="row">
-  <div class="col-sm-3 offset-sm-4">
-    <%= link_to "Make Payment", square_index_url, class: "btn btn-md btn-primary" %>
+  <div class="col-sm-6 offset-sm-6">
+    <button class="btn btn-md btn-success" disabled>Print Receipt</button>
   </div>
 </div>
-
-<p>&nbsp;</p>

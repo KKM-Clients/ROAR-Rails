@@ -2,33 +2,38 @@ class SquareController < ApplicationController
   #before_action :set_order, only: [:show, :edit, :update, :destroy]
   #respond_to :html, :json
 
-  $rider = Rider.last
-
-
   def index
-    #$rider = Rider.last
-    @email = $rider.DEA
-    @zipcode = $rider.DZ
+    @rider = Rider.last
 
-    pass = $rider.pass.to_i + 1
+    #number of riders
+    @pass_free = Passenger.where(:rider_id => @rider.id).where(:age => 0).count   #number of riders uner 10
+    @pass_pay =  Passenger.where(:rider_id =>   @rider.id).where(:age => 1).count+1  #number of riders over 10
 
-    flh = $rider.FLH.to_i
-    flt = $rider.FLT.to_i
-    slh = $rider.SLH.to_i
-    slt = $rider.SLT.to_i
+    #raise $pass_free.inspect
 
-    lunch = flh + flt + slh + slt
+    #total rider cost
+    @trc = @pass_pay * 70     #total rider cost
 
-    @total_riders = pass          #total number of riders above 10 pluse driver
-    @trc = @total_riders * 70     #total rider cost
-    @total_lunch = lunch          #total number of lunches
-    @tlc = @total_lunch * 8       #total lunch cost
-    @Grandtotal = @trc + @tlc     #Grand total of rider + lunches
+    #Set up to calculate lunches
+    flh = @rider.FLH
+    flt = @rider.FLT
+    slh = @rider.SLH
+    slt = @rider.SLT
 
+    #total of all lunches
+    @lunch = flh + flt + slh + slt
+
+    #raise @lunch.inspect
+
+
+    #total over all
+    @tlc = @lunch * 8             #total lunch cost
+    @Grandtotal = @trc + @tlc           #Grand total of rider + lunches
 
   end
 
   def create
+    @rider = Rider.last
 
     #Set variables
     nonce = params[:nonce]
@@ -57,16 +62,16 @@ class SquareController < ApplicationController
         :card_nonce => nonce,
 
         #An optional ID you can associate with the transaction for your own purposes This value cannot exceed 40 characters.
-        :reference_id => ($rider.id.to_s + $rider.DZ),
+        :reference_id => (@rider.id.to_s + @rider.DZ),
 
         :billing_address => {
-          :address_line_1 => $rider.DMA,
-          :locality => $rider.DC,
-          :administrative_district_level_1 => $rider.DS,
-          :postal_code => $rider.DZ
+          :address_line_1 =>@rider.DMA,
+          :locality =>@rider.DC,
+          :administrative_district_level_1 =>@rider.DS,
+          :postal_code =>@rider.DZ
         },
 
-        :buyer_email_address => $rider.DEA
+        :buyer_email_address =>@rider.DEA
 
       }
 
@@ -80,36 +85,26 @@ class SquareController < ApplicationController
         raise "Error encountered while charging card: #{e.message}"
       end
 
-      @resp = resp
-
-      #@trans = resp.transaction
+      #@resp = resp
 
       @refid = resp.transaction.reference_id
-
       @amount = resp.transaction.tenders[0].amount_money.amount / 100
 
       #add add refid to db as Regid
-      Rider.update($rider.id, :regid => @refid)
-
+      Rider.update(@rider.id, :regid => @refid)
 
       #raise @resp.inspect
-
 
       # Send receipt email to user
       #ReceiptMailer.charge_email(params[:email],data).deliver_now if Rails.env == "development"
 
-      render :show
       #render json: {:status => 200}
+
+      redirect_to @rider
     else
       flash[:notice] = "Invalied CC please resubmit."
 
       render :new
     end
-  end
-
-  def show
-    @rid = Rider.last
-    @rid = $rider.DEA
-
   end
 end

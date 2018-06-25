@@ -16,9 +16,9 @@ class RidersController < ApplicationController
 
       flash[:success] = "You have successfully created a new Rider!"
 
-      count = Passenger.where(:rider_id => rid).where(:age => "+10").count
+      #count = Passenger.where(:rider_id => rid).where(:age => "+10").count
 
-      Rider.update(rid, :pass => count)
+      #Rider.update(rid, :pass => count)
 
       redirect_to :controller => 'square', :action => 'index'
     else
@@ -27,12 +27,35 @@ class RidersController < ApplicationController
   end
 
   def update
-    rid = Rider.last[:id]
+  end
+
+  def show
+    @rider = Rider.last
+
+    #number of riders
+    @pass_free = Passenger.where(:rider_id => @rider.id).where(:age => 0).count   #number of riders uner 10
+    @pass_pay =  Passenger.where(:rider_id =>   @rider.id).where(:age => 1).count+1  #number of riders over 10
+
+    #raise $pass_free.inspect
+
+    #total rider cost
+    @trc = @pass_pay * 70     #total rider cost
+
+    #Set up to calculate lunches
+    flh = @rider.FLH
+    flt = @rider.FLT
+    slh = @rider.SLH
+    slt = @rider.SLT
+
+    #total of all lunches
+    @lunch = flh + flt + slh + slt
+
+    #raise @lunch.inspect
 
 
-
-
-    #@rider.update
+    #total over all
+    @tlc = @lunch * 8             #total lunch cost
+    @Grandtotal = @trc + @tlc           #Grand total of rider + lunches
   end
 
   def rider_params
