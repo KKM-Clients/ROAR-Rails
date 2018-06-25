@@ -3,10 +3,48 @@
 
 <!-- <p>tenders: <% @trans %></p> -->
 
-<h3>Welcome to our annual ROA Event.</h3>
+<h3>Thank you for joining us on Aug 9-11 for our annual ROAR Event</h3>
 
 <p>We Look forward to seeing on the trails soon and sharing our memories with you.</p>
+<p> Here is an electronic Reciept/Comfromation. Please print a copy and bring it with you to checkin.</p>
 
-<p>Your <strong>order #: <%= @refid %></strong>, please retain a copy of it for your recoreds.</p>
-
-<h4>Total amount paid in full: <%= number_to_currency(@amount) %>.</h4>
+<div class="row">
+  <div class="col-7 pt-4">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <tr>
+          <th colspan="3" class="text-center"><h3>Confirm of Order</h3></th>
+        </tr>
+        <tr>
+          <th width="18%">Item</th>
+          <th width="15%">Quantity</th>
+          <th width="15%">Totals</th>
+        </tr>
+        <tr>
+          <td class="text-left">Riders under 10</td>
+          <td><%= $pass_free %></td>
+          <td class="text-uppercase"><strong><em>Ride Free</em></strong></td>
+        </tr>
+        <tr>
+          <td class="text-left">Riders over 10</td>
+          <td><%= $pass_pay %></td>
+          <td>$70.00</td>
+        </tr>
+        <tr>
+          <td class="text-left">Lunches</td>
+          <td><%= $total_lunch %></td>
+          <td>$8.00</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-left">Grand Total</td>
+          <td><%= number_to_currency($Grandtotal) %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 offset-sm-6">
+    <button class="btn btn-md btn-success" disabled>Print Receipt</button>
+  </div>
+</div>
