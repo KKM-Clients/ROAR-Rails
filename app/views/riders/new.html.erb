@@ -7,6 +7,7 @@
           <div class="col-sm-9 offset-sm-1">
             <div class="table-responsive">
               <table class="table table-bordered">
+                <!-- Driver Informaton -->
                 <tr>
                   <th  colspan="2"><h3>Driver Information</h3></th>
                 </tr>
@@ -17,7 +18,7 @@
                   </td>
                   <td>
                     <%= f.label(:DLN, "First Name:", class: "sr-only") %>
-                    <%= f.text_field(:DLN, {class: "form-control mb-2 mr-sm-2", placeholder: "Drivers Last Name, :required => true"}) %>
+                    <%= f.text_field(:DLN, {class: "form-control mb-2 mr-sm-2", placeholder: "Drivers Last Name," :required => true}) %>
                   </td>
                 </tr>
                 <tr>
@@ -60,6 +61,7 @@
                     <%= f.select :DTS, options_for_select([["No T-Shirt", "NA"],["Small", "S"],["Medium", "M"],["Large", "L"],["X Large", "XL"],["XX Large", "XXL"],["XXX Large", "XXXL"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
                   </td>
                 </tr>
+                <!-- ECI -->
                 <tr>
                   <th colspan="2">Emergncy Contact Information</th>
                 </tr>
