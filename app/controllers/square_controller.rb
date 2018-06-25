@@ -4,31 +4,28 @@ class SquareController < ApplicationController
 
   $rider = Rider.last
 
-  #number of riders
-  $pass_free = Passenger.where(:rider_id => $rider.id).where(:age => "-10").count   #number of riders uner 10
-  $pass_pay = Passenger.where(:rider_id => $rider.id).where(:age => "+10").count+1  #number of riders over 10
-
-  #global use veriablrs
-  $email = $rider.DEA
-  $zipcode = $rider.DZ
-
-  #Set up to calculate lunches
-  $flh = $rider.FLH.to_i
-  $flt = $rider.FLT.to_i
-  $slh = $rider.SLH.to_i
-  $slt = $rider.SLT.to_i
-
-  #total of all lunches
-  $lunch = $flh + $flt + $slh + $slt
-
-  #total over all
-  $trc = $pass_pay * 70           #total rider cost
-  $total_lunch = $lunch                #total number of lunches
-  $tlc = $total_lunch * 8             #total lunch cost
-  $Grandtotal = $trc + $tlc           #Grand total of rider + lunches
-
 
   def index
+    #$rider = Rider.last
+    @email = $rider.DEA
+    @zipcode = $rider.DZ
+
+    pass = $rider.pass.to_i + 1
+
+    flh = $rider.FLH.to_i
+    flt = $rider.FLT.to_i
+    slh = $rider.SLH.to_i
+    slt = $rider.SLT.to_i
+
+    lunch = flh + flt + slh + slt
+
+    @total_riders = pass          #total number of riders above 10 pluse driver
+    @trc = @total_riders * 70     #total rider cost
+    @total_lunch = lunch          #total number of lunches
+    @tlc = @total_lunch * 8       #total lunch cost
+    @Grandtotal = @trc + @tlc     #Grand total of rider + lunches
+
+
   end
 
   def create
@@ -60,7 +57,7 @@ class SquareController < ApplicationController
         :card_nonce => nonce,
 
         #An optional ID you can associate with the transaction for your own purposes This value cannot exceed 40 characters.
-        :reference_id => ($rider.id.to_s + $zipcode),
+        :reference_id => ($rider.id.to_s + $rider.DZ),
 
         :billing_address => {
           :address_line_1 => $rider.DMA,
