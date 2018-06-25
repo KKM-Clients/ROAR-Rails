@@ -1,5 +1,8 @@
 class RidersController < ApplicationController
   def index
+      @date = Date.today.to_s
+
+      @closed = "2018-008-06"
   end
 
   def new

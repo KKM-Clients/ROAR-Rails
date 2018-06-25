@@ -60,16 +60,16 @@
             <tr>
               <td class="text-left">Riders over 10</td>
               <td><%= @pass_pay %> <small>x $70.00</small></td>
-              <td><%= @trc %></td>
+              <td><%=number_to_currency(@trc) %></td>
             </tr>
             <tr>
               <td class="text-left">Lunches</td>
               <td><%= @lunch %> <small>x $8.00</small></td>
-              <td><%= @tlc %></td>
+              <td><%= number_to_currency(@tlc) %></td>
             </tr>
             <tr>
               <td colspan="2" class="text-left">Grand Total</td>
-              <td><%= text_field_tag(:sq_total, @Grandtotal, class:"form-control-plaintext text-center", placeholder: number_to_currency($Grandtotal),readonly: true) %></td>
+              <td><%= text_field_tag(:sq_total, @Grandtotal, class:"form-control-plaintext text-center", readonly: true) %></td>
             </tr>
           </table>
         </div>

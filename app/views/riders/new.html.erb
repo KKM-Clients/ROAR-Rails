@@ -4,290 +4,146 @@
       <%= form_for @rider do |f| %>
         <%= f.hidden_field :RRCW, :value => "yes" %>
         <div class="row">
-          <div class="col-11">
-            <div class="accordion" id="regForm">
-              <!-- Driver Information -->
-              <div class="card">
-                <div class="card-header" id="headingDriver">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseDriver" aria-expanded="true" aria-controls="collapseDriver">
-                      Driver Information
-                    </button>
-                  </h5>
-                </div>
-
-                <div id="collapseDriver" class="collapse show" aria-labelledby="headingDriver" data-parent="#regForm">
-                  <div class="card-body">
-                    <!-- Driver Information -->
-                    <fieldset>
-                      <!-- Driver Name -->
-                      <div class="form-group row">
-                        <!-- First Name -->
-                        <div class="col">
-                          <%= f.label(:DFN, "First Name:", class: "col-sm-3 col-form-label col-form-label-md") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field(:DFN, {class: "form-control", placeholder: "Drivers First Name"}) %>
-                          </div>
-                        </div>
-                        <!-- Last name -->
-                        <div class="col">
-                          <%= f.label(:DLN, "Last Name:", class: "col-sm-3 col-form-label-md") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field(:DLN, {class: "form-control", placeholder: "Drivers Last Name"}) %>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Drive Mailing Adress -->
-                      <div class="form-group row">
-                        <!-- Street Number -->
-                        <div class="col">
-                          <%= f.label(:DMA, "Stree Number:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field(:DMA, {class: "form-control", placeholder: "Street Address"}) %>
-                          </div>
-                        </div>
-                        <!-- City -->
-                        <div class="col">
-                          <%= f.label(:DC, "City:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field(:DC, {class: "form-control", placeholder: "City"}) %>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Drive Mailing Address Continued to next row -->
-                      <div class="form-group row">
-                        <!-- State -->
-                        <div class="col">
-                          <%= f.label(:DS, "State:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field(:DS, {class: "form-control", placeholder: "State"}) %>
-                          </div>
-                        </div>
-                        <!-- Zip -->
-                        <div class="col">
-                          <%= f.label(:DZ, "Zip-Code:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field(:DZ, {class: "form-control", placeholder: "Zip Code"}) %>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Contact Information -->
-                      <div class="form-group row">
-                        <!-- Cell Phone -->
-                        <div class="col">
-                          <%= f.label(:DCP, "Cell Phone:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field(:DCP, {class: "form-control", placeholder: "Drivers Cell Phone"}) %>
-                          </div>
-                        </div>
-                        <!-- Email -->
-                        <div class="col">
-                          <%= f.label(:DEA, "Email Address:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.email_field(:DEA, {class: "form-control", placeholder: "Drivers Email Address"}) %>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Exp & T-Shirt -->
-                      <div class="form-group row">
-                        <!-- Experience Level -->
-                        <div class="col">
-                          <%= f.label(:ExpLev, "Experienc Level:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.select :ExpLev, options_for_select([ "Select Level", "Beginer", "Intermediate", "Advanced" ], "Select Level"),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                        <!-- T-Shirt Size -->
-                        <div class="col">
-                          <%= f.label(:DTS, "T-Shirt Size:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.select :DTS, options_for_select([["No T-Shirt", "NA"],["Small", "S"],["Medium", "M"],["Large", "L"],["X Large", "XL"],["XX Large", "XXL"],["XXX Large", "XXXL"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-              </div>
-              <!-- Emergncy Contact Information -->
-              <div class="card">
-                <div class="card-header" id="headingECI">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseECI" aria-expanded="false" aria-controls="collapseECI">
-                      Emergncy Contact Information
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseECI" class="collapse" aria-labelledby="headingECI" data-parent="#regForm">
-                  <div class="card-body">
-                    <fieldset>
-                      <!-- Emergency Contact Name -->
-                      <div class="form-group row">
-                        <!-- First Name -->
-                        <div class="col">
-                          <%= f.label(:ECFN, "First Name:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field("ECFN",{class: "form-control", placeholder: "First Name"}) %>
-                            <!-- <input type="text" class="form-control" id="EDFN" placeholder="Emergency Contact Firat Name" required> -->
-                          </div>
-                        </div>
-                        <!-- Last name -->
-                        <div class="col">
-                          <%= f.label(:ECLN, "Last Name:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field("ECLN",{class: "form-control", placeholder: "Last Name"}) %>
-                            <!-- <input type="text" class="form-control" id="ELN" placeholder="Emergency Contact Last Name" required> -->
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Emergency Contact Information -->
-                      <div class="form-group row">
-                        <!-- Cell Phone -->
-                        <div class="col">
-                          <%= f.label(:ECCP, "Phone Number:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.text_field('ECCP', {class: "form-control", placeholder: "Phone Number"}) %>
-                            <!-- <input type="phone" class="form-control" id="ECP" placeholder="Emergency Phone" required> -->
-                          </div>
-                        </div>
-                        <!-- Emergncy Test -->
-                        <div class="col">
-                          <%= f.label(:ECT, "Accept Text Message", class: "col-sm-5 col-form-label") %>
-                          <div class="form-check">
-                            <%= f.check_box("ECT", {class: "form-check-input"}, "yes", "no")  %>
-                          </div>
-                        </div><!-- Emergncy Test Column -->
-                      </div><!-- Row -->
-                    </fieldset>
-                  </div>
-                </div>
-              </div>
-              <!-- Passenger Information -->
-              <div class="card">
-                <div class="card-header" id="headingPass">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsePass" aria-expanded="false" aria-controls="collapsePass">
-                      Passenger Information
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapsePass" class="collapse" aria-labelledby="headingPass" data-parent="#regForm">
-                  <div class="card-body">
-                    <!-- Passenger Information -->
-                    <%= f.fields_for :passengers do |ff| %>
-                    <fieldset>
-                      <!-- Driver Name -->
-                      <div class="form-group row">
-                        <!-- First Name -->
-                        <div class="col">
-                          <%= ff.label(:fname, "First Name:", class: "col-sm-3 col-form-label col-form-label-md") %>
-                          <div class="col-sm-5">
-                            <%= ff.text_field(:fname, {class: "form-control", placeholder: "Passenger First Name"}) %>
-                          </div>
-                        </div>
-                        <!-- Last name -->
-                        <div class="col">
-                          <%= ff.label(:lname, "Last Name:", class: "col-sm-3 col-form-label-md") %>
-                          <div class="col-sm-5">
-                            <%= ff.text_field(:lname, {class: "form-control", placeholder: "Passenger Last Name"}) %>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Age & T-Shirt -->
-                      <div class="form-group row">
-                        <!-- Passenger Age -->
-                        <div class="col">
-                          <%= ff.label(:age, "Passenger Age:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= ff.select :age, options_for_select([["Select Age", "0"],["under  10", "0"],["Over - 10", "1"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                        <!-- T-Shirt Size -->
-                        <div class="col">
-                          <%= ff.label(:tshirt, "T-Shirt Size:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= ff.select :tshirt, options_for_select([["No T-Shirt", "NA"],["Small", "S"],["Medium", "M"],["Large", "L"],["X Large", "XL"],["XX Large", "XXL"],["XXX Large", "XXXL"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                    <hr />
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-              <!-- Event Information -->
-              <div class="card">
-                <div class="card-header" id="headingEvetn">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEvetn" aria-expanded="false" aria-controls="collapseEvetn">
-                      Event Information
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseEvetn" class="collapse" aria-labelledby="headingEvetn" data-parent="#regForm">
-                  <div class="card-body">
-                    <fieldset>
-                      <!-- Ham Lunches -->
-                      <div class="form-group row">
-                        <!-- Friday Lunch - Ham -->
-                        <div class="col">
-                          <%= f.label(:FLH, "Friday Lunch   Ham:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.select :FLH, options_for_select([["No Ham Lunch", "0"],["Ham - 1 Person", "1"],["Ham - 2 Person", "2"],["Ham - 3 Person", "3"],["Ham - 4 Person", "4"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                        <!-- Friday Lunch - Turkey -->
-                        <div class="col">
-                          <%= f.label(:FLT, "Friday Lunch Turkey:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.select :FLT, options_for_select([["No Turkey Lunch", "0"],["Turkey - 1 Person", "1"],["Turkey - 2 Person", "2"],["Turkey - 3 Person", "3"],["Turkey - 4 Person", "4"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                      </div><!-- Friday Row -->
-                      <!-- Turkey Lunches -->
-                      <div class="form-group row">
-                        <!-- Saturday Lunch - Ham -->
-                        <div class="col">
-                          <%= f.label(:SLH, "Saturday Lunch Ham:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.select :SLH, options_for_select([["No Ham Lunch", "0"],["Ham - 1 Person", "1"],["Ham - 2 Person", "2"],["Ham - 3 Person", "3"],["Ham - 4 Person", "4"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                        <!-- Saturday Lunch - Turkey -->
-                        <div class="col">
-                          <%= f.label(:SLT, "Saturday Lunch Turkey:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.select :SLT, options_for_select([["No Turkey Lunch", "0"],["Turkey - 1 Person", "1"],["Turkey - 2 Person", "2"],["Turkey - 3 Person", "3"],["Turkey - 4 Person", "4"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                      </div><!-- Saturday Row -->
-                      <!-- Experience Level & Riding Dates -->
-                      <div class="form-group row">
-                        <!-- Driver Riding Dates-->
-                        <div class="col">
-                          <%= f.label(:RD, "Riding Dates:", class: "col-sm-3 col-form-label") %>
-                          <div class="col-sm-5">
-                            <%= f.select :RD, options_for_select([["All Dates", "All"],["August 9th", "Thursday"],["August 10th", "Friday"],["August 11th", "Saturday"],
-                              ["August 9 - 10", "Thursday & Friday"], ["August 10 - 11", "Friday & Saturday"]]),{}, {class: "custom-select custom-select-md mb-3"} %>
-                          </div>
-                        </div>
-                        <!-- Payment Type -->
-                        <div class="col">
-                          <input type="hidden" value="WP" id="PT" />
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row pt-4">
-          <div class="col-sm-2 offset-sm-10">
-            <button type="submit" class="btn btn-lg btn-primary">Checkout</button>
-          </div>
-        </div>
+          <div class="col-sm-9 offset-sm-1">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <tr>
+                  <th  colspan="2"><h3>Driver Information</h3></th>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:DFN, "First Name:", class: "sr-only") %>
+                    <%= f.text_field(:DFN, {class: "form-control mb-2 mr-sm-2", placeholder: "Drivers First Name", :required => true}) %>
+                  </td>
+                  <td>
+                    <%= f.label(:DLN, "First Name:", class: "sr-only") %>
+                    <%= f.text_field(:DLN, {class: "form-control mb-2 mr-sm-2", placeholder: "Drivers Last Name, :required => true"}) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:DMA, "Stree Number:", class: "sr-only") %>
+                    <%= f.text_field(:DMA, {class: "form-control mb-2 mr-sm-2", placeholder: "Street Address"}) %>
+                  </td>
+                  <td>
+                    <%= f.label(:DC, "City:", class: "sr-only") %>
+                    <%= f.text_field(:DC, {class: "form-control mb-2 mr-sm-2", placeholder: "City"}) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:DS, "State:", class: "sr-only") %>
+                    <%= f.text_field(:DS, {class: "form-control mb-2 mr-sm-2", placeholder: "State"}) %>
+                  </td>
+                  <td>
+                    <%= f.label(:DZ, "Zipcode:", class: "sr-only") %>
+                    <%= f.text_field(:DZ, {class: "form-control mb-2 mr-sm-2", placeholder: "Zipcode"}) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:DCP, "Cell Phone:", class: "sr-only") %>
+                    <%= f.text_field(:DCP, {class: "form-control mb-2 mr-sm-2", placeholder: "Drivers Cell Phone, :required => true"}) %>
+                  </td>
+                  <td>
+                    <%= f.label(:DEA, "Email Address:", class: "sr-only") %>
+                    <%= f.text_field(:DEA, {class: "form-control mb-2 mr-sm-2", placeholder: "Email Address", :required => true}) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:ExpLev, "Experienc Level:", class: "sr-only") %>
+                    <%= f.select :ExpLev, options_for_select([ "Select Level", "Beginer", "Intermediate", "Advanced" ], "Select Level"),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                  <td>
+                    <%= f.label(:DTS, "T-Shirt Size:", class: "sr-only") %>
+                    <%= f.select :DTS, options_for_select([["No T-Shirt", "NA"],["Small", "S"],["Medium", "M"],["Large", "L"],["X Large", "XL"],["XX Large", "XXL"],["XXX Large", "XXXL"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2">Emergncy Contact Information</th>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:ECFN, "First Name:",  class: "sr-only") %>
+                    <%= f.text_field("ECFN",{class: "form-control mb-2 mr-sm-2", placeholder: "First Name"}) %>
+                  </td>
+                  <td>
+                    <%= f.label(:ECLN, "Last Name:", class: "sr-only") %>
+                    <%= f.text_field("ECLN",{class: "form-control mb-2 mr-sm-2", placeholder: "Last Name"}) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:ECCP, "Phone Number:", class: "sr-only") %>
+                    <%= f.text_field('ECCP', {class: "form-control mb-2 mr-sm-2", placeholder: "Phone Number"}) %>
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <%= f.check_box("ECT", {class: "form-check-input"}, "yes", "no")  %>
+                      Can Accept Text Message
+                    </div>
+                  </td>
+                </tr>
+                <!-- Passenger Informaton -->
+                <tr>
+                  <th colspan="2">Passenger Informaton</th>
+                </tr>
+                <%= f.fields_for :passengers do |ff| %>
+                <tr>
+                  <td>
+                    <%= ff.label(:fname, "First Name:", class: "sr-only") %>
+                    <%= ff.text_field(:fname, {class: "form-control mb-2 mr-sm-2", placeholder: "Passenger First Name"}) %>
+                  </td>
+                  <td>
+                    <%= ff.label(:lname, "Last Name:", class: "sr-only") %>
+                    <%= ff.text_field(:lname, {class: "form-control mb-2 mr-sm-2", placeholder: "Passenger Last Name"}) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= ff.label(:age, "Passenger Age:", class: "sr-only") %>
+                    <%= ff.select :age, options_for_select([["Select Age", "0"],["under  10", "0"],["Over - 10", "1"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                  <td>
+                    <%= ff.label(:tshirt, "T-Shirt Size:", class: "sr-only") %>
+                    <%= ff.select :tshirt, options_for_select([["No T-Shirt", "NA"],["Small", "S"],["Medium", "M"],["Large", "L"],["X Large", "XL"],["XX Large", "XXL"],["XXX Large", "XXXL"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                </tr>
+                <% end %>
+                <tr>
+                  <th colspan="2">Event Infromation</th>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:FLH, "Friday Lunch   Ham:", class: "sr-only") %>
+                    <%= f.select :FLH, options_for_select([["No Ham Lunch", "0"],["Ham - 1 Person", "1"],["Ham - 2 Person", "2"],["Ham - 3 Person", "3"],["Ham - 4 Person", "4"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                  <td>
+                    <%= f.label(:FLT, "Friday Lunch Turkey:", class: "sr-only") %>
+                    <%= f.select :FLT, options_for_select([["No Turkey Lunch", "0"],["Turkey - 1 Person", "1"],["Turkey - 2 Person", "2"],["Turkey - 3 Person", "3"],["Turkey - 4 Person", "4"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:SLH, "Saturday Lunch Ham:", class: "sr-only") %>
+                    <%= f.select :SLH, options_for_select([["No Ham Lunch", "0"],["Ham - 1 Person", "1"],["Ham - 2 Person", "2"],["Ham - 3 Person", "3"],["Ham - 4 Person", "4"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                  <td>
+                    <%= f.label(:SLT, "Saturday Lunch Turkey:", class: "sr-only") %>
+                    <%= f.select :SLT, options_for_select([["No Turkey Lunch", "0"],["Turkey - 1 Person", "1"],["Turkey - 2 Person", "2"],["Turkey - 3 Person", "3"],["Turkey - 4 Person", "4"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.label(:RD, "Riding Dates:", class: "sr-only") %>
+                    <%= f.select :RD, options_for_select([["All Dates", "All"],["August 9th", "Thursday"],["August 10th", "Friday"],["August 11th", "Saturday"],
+                            ["August 9 - 10", "Thursday & Friday"], ["August 10 - 11", "Friday & Saturday"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
+                  </td>
+                  <td class="text-right"><button type="submit" class="btn btn-lg btn-primary">Checkout</button></td>
+                </tr>
+              </table>
+            </div><!--table-responsive -->
+          </div><!-- col-11 -->
+        </div> <!-- row -->
       <% end %>

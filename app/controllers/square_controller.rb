@@ -3,6 +3,8 @@ class SquareController < ApplicationController
   #respond_to :html, :json
 
   def index
+    @date = Date.today.to_s
+
     @rider = Rider.last
 
     #number of riders
@@ -12,7 +14,12 @@ class SquareController < ApplicationController
     #raise $pass_free.inspect
 
     #total rider cost
-    @trc = @pass_pay * 70     #total rider cost
+
+    if @date == "2018-07-31"
+      @trc = @pass_pay * 75     #total rider cost
+    else
+      @trc = @pass_pay * 70     #total rider cost
+    end
 
     #Set up to calculate lunches
     flh = @rider.FLH
@@ -29,6 +36,7 @@ class SquareController < ApplicationController
     #total over all
     @tlc = @lunch * 8             #total lunch cost
     @Grandtotal = @trc + @tlc           #Grand total of rider + lunches
+
 
   end
 
