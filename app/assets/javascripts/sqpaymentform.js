@@ -1,8 +1,18 @@
+
+//Heather sandbox
 // Set the application ID
-var applicationId = "sandbox-sq0idp-5bZaTXKLTUwcepy1RowA7A";
+//var applicationId = "sandbox-sq0idp-5bZaTXKLTUwcepy1RowA7A";
 
 // Set the location ID
-var locationId = "CBASEL2Cz6BUt51iiMmFgSZd4qkgAQ";
+//var locationId = "CBASEL2Cz6BUt51iiMmFgSZd4qkgAQ";
+
+//Konie sandbox
+
+// Set the application ID
+var applicationId = "sandbox-sq0idp-zWaeVPyhbC8ha7ZaKuRf7A";
+
+// Set the location ID
+var locationId = "CBASEDR73_KWR1wCM637SBSyn64gAQ";
 
 /*
  * function: requestCardNonce
@@ -183,6 +193,7 @@ var paymentForm = new SqPaymentForm({
      */
     paymentFormLoaded: function() {
       /* HANDLE AS DESIRED */
+      paymentForm.focus("cardNumber");
     }
   }
 });

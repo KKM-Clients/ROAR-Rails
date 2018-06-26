@@ -91,9 +91,8 @@ class SquareController < ApplicationController
         resp = transactions_api.charge(location_id, request_body)
       rescue SquareConnect::ApiError => e
         raise "Error encountered while charging card: #{e.message}"
-      end
 
-      #@resp = resp
+      end
 
       @refid = resp.transaction.reference_id
       @amount = resp.transaction.tenders[0].amount_money.amount / 100

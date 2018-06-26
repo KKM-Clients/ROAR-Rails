@@ -6,7 +6,7 @@
     You should replace the action attribute of the form with the path of
     the URL you want to POST the nonce to (for example, "/process-card")
   -->
-  <%= form_with scope: :square, url: square_index_path, :id => "nonce-form", novalidate: true do |f| %>
+  <%= form_with scope: :square, url: square_index_path, :class => "needs-validation", :id => "nonce-form", novalidate: true do |f| %>
       <div class="table-responsive">
           <table class="table table-bordered">
             <tr>
@@ -33,7 +33,10 @@
                 <div class="form-group row">
                   <label for="sq-expiration-date" class="col-sm-4 col-form-label">Expiration Date:</label>
                   <div class="col-sm-5">
-                    <input type="text" class="form-control" id="sq-expiration-date" placeholder="Expiration Date" required>
+                    <input type="text" class="form-control" name="expdate" id="sq-expiration-date" placeholder="Expiration Date" required>
+                    <div class="invalid-tooltip">
+                      Please provide an Experation Date.
+                    </div>
                   </div>
                 </div>
                 <div class="form-group row">
