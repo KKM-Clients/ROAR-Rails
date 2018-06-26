@@ -3,25 +3,25 @@
 <% if current_page?(controller: 'rules_regs', action: 'index') %>
   <ul>
     <li>Rules & Regulations</li>
-    <li><%= link_to "Trail Rating", trail_ratings_url, :title =>"Trail Rating" %></li>
-    <li><%= link_to "Trails", trails_url, :title =>"Trails" %></li>
+    <li><%= link_to "Trail Rating", trail_ratings_url %></li>
+    <li><%= link_to "Trails", trails_url %></li>
   </ul>
 <% elsif current_page?(controller: 'trail_ratings', action: 'index') %>
   <ul class="left-nav-ul">
-    <li><%= link_to "Rules & Regulations", rules_regs_url, :title =>"Rules & Regulations" %></li>
+    <li><%= link_to "Rules & Regulations", rules_regs_url %></li>
     <li>Trail Rating</li>
-    <li><%= link_to "Trails", trails_url, :title =>"Trails" %></li>
+    <li><%= link_to "Trails", trails_url %></li>
   </ul>
 <% elsif current_page?(controller: 'trails', action: 'index') %>
   <ul>
-    <li><%= link_to "Rules & Regulations", rules_regs_url, :title =>"Rules & Regulations" %></li>
-    <li><%= link_to "Trail Rating", trail_ratings_url, :title =>"Trail Rating" %></li>
+    <li><%= link_to "Rules & Regulations", rules_regs_url %></li>
+    <li><%= link_to "Trail Rating", trail_ratings_url %></li>
     <li>Trails</li>
   </ul>
 <% elsif current_page?(controller: 'events', action: 'index') %>
   <ul>
     <li><a href="https://drive.google.com/open?id=1RQvhrEWgagx_1-2hbGYv9KLfpGYihLs_irBb_dbnGz4" target="_blank" title="Download Vendor Registration Form">Vendor Registration Form</a></li>
-    <li class="nav-item"><%= link_to "Lodging", lodging_index_url, :title => "Where to Stay" %></li>
+    <li class="nav-item"><%= link_to "Lodging", lodging_index_url %></li>
   </ul>
 
   <hr />
@@ -29,14 +29,14 @@
 <% elsif current_page?(controller: 'riders', action: 'index') %>
   <ul>
     <li>Rider Registration</li>
-    <li><%= link_to "Vendor Registration", vendors_url, :title => "Registor to be a vendor" %></li>
+    <li><%= link_to "Vendor Registration", vendors_url %></li>
   </ul>
 
   <hr />
   <%= render "sponsors" %>
   <% elsif current_page?(controller: 'vendors', action: 'index') %>
     <ul>
-      <li><%= link_to "Rider Registration", riders_url, :title => "Registor to ride along with us" %></li>
+      <li><%= link_to "Rider Registration", riders_url %></li>
       <li>Vendor Registration</li>
     </ul>
 

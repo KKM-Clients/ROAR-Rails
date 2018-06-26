@@ -1,5 +1,13 @@
 <% title "Trails" %>
 
+<h3>Please use caution Self-Exploring our trails</h3>
+
+<p>Trails are located between 4 to 35 miles from the center of town and most are accessibile without trailering. The trails range form mostly groomed to loose
+gravel and mild to wild.</p>
+
+<p>You are invited to join us for our <%= link_to "Annual ROAR event", events_index_url %> and ride the trails with us. This event is a great opportunity to
+experience more trails that Rangely has to offer.</p>
+
 
 <div id="accordion">
   <!-- Texas Mountain -->
@@ -14,7 +22,7 @@
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-          <p class="text-center"><%= image_tag("Trails/ROARTexasMtn(2).jpg", :alt => "Texas Mt", :class => "img-fluid img-thumbnail") %></p>
+          <p class="text-center"><%= link_to(image_tag("Trails/ROARTexasMtn(2).jpg", :alt => "Texas Mt", :class => "img-fluid img-thumbnail"), "https://drive.google.com/open?id=1oOXjMXL9aTBTJbIcEIWAQ7vzR_cW--T-", target: "blank") %></p>
 
         <h2>Texas Mountain</h2>
 
@@ -23,19 +31,17 @@
             <tr class="text-center">
               <th width="15%">Rating</th>
               <th>Miles</th>
-              <th>Meeting Place</th>
               <th>Parking at Trailhead</th>
               <th>Download Map</th>
             </tr>
             <tr class="text-center">
               <td>
-                <%= link_to(image_tag("Trails/Green-easy.png", :style => 'width:40%;', :alt => "Green-Easy", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Green - Easy') %>
-                <%= link_to(image_tag("Trails/blue-moderate.png", :style => 'width:42.5%;', :alt => "Blue-Moderate", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Blue - Moderate')%>
+                <%= link_to(image_tag("Trails/Green-easy.png", :style => 'width:40%;', :alt => "Green-Easy", :class => "img-fluid img-thumbnail"), trail_ratings_url ) %>
+                <%= link_to(image_tag("Trails/blue-moderate.png", :style => 'width:42.5%;', :alt => "Blue-Moderate", :class => "img-fluid img-thumbnail"), trail_ratings_url )%>
               </td>
               <td>40 mi. </td>
-              <td>Elks Park</td>
-              <td>Yes</td>
-              <td><a href="https://drive.google.com/open?id=16O0gwgERUMJzeN1kA99zO5p3KTxvu9Im" title="Download PDF Map of Texas Mountain" target="_blank">PDF Map</a></td>
+              <td>Yes - CR23</td>
+              <td><a href="https://drive.google.com/open?id=1oOXjMXL9aTBTJbIcEIWAQ7vzR_cW--T-" target="_blank">PDF Map</a></td>
             </tr>
           </table>
           <hr />
@@ -67,7 +73,7 @@
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-        <p class="text-center"><%= image_tag("Trails/ROAR_Edouglas(2).jpg", :alt => "East Douglas Map", :class => "img-fluid img-thumbnail") %></p>
+        <p class="text-center"><%= link_to(image_tag("Trails/ROAR_Edouglas(2).jpg", :alt => "East Douglas Map", :class => "img-fluid img-thumbnail"), "https://drive.google.com/open?id=1K9E72iRymM8nd_rfmiqGuMIUUwzWU5Xs", target: "blank") %></p>
 
         <h2>East Douglas</h2>
         <div class="table-responsive-sm">
@@ -75,7 +81,6 @@
             <tr class="text-center">
               <th width="15%">Rating</th>
               <th>Miles</th>
-              <th>Meeting Place</th>
               <th>Parking at Trailhead</th>
               <th>Download Map</th>
             </tr>
@@ -85,8 +90,7 @@
                 <%= link_to(image_tag("Trails/blue-moderate.png", :style => 'width:42.5%;', :alt => "Blue-Moderate", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Blue - Moderate')%>
               </td>
               <td>48 mi. </td>
-              <td>Rangely Auto Museum</td>
-              <td>Yes</td>
+              <td>Yes - Rope Canyon</td>
               <td><a href="https://drive.google.com/open?id=1K9E72iRymM8nd_rfmiqGuMIUUwzWU5Xs" title="Download PDF Map of Texas Mountain" target="_blank">PDF Map</a></td>
             </tr>
           </table>
@@ -117,7 +121,7 @@
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        <p class="text-center"><%= image_tag("Trails/ROARChaseDraw(2).jpg", :alt => "Chase Draw Map", :class => "img-fluid img-thumbnail") %></p>
+        <p class="text-center"><%= link_to(image_tag("Trails/ROARChaseDraw(2).jpg", :alt => "Chase Draw Map", :class => "img-fluid img-thumbnail"),"https://drive.google.com/open?id=1YVAYcimR6IPud1cOpOFIYlC8mSonNd4u", target: "blank") %></p>
 
         <h2>Chase Draw</h2>
         <div class="table-responsive-sm">
@@ -125,7 +129,6 @@
             <tr class="text-center">
               <th width="15%">Rating</th>
               <th>Miles</th>
-              <th>Meeting Place</th>
               <th>Parking at Trailhead</th>
               <th>Download Map</th>
             </tr>
@@ -134,25 +137,22 @@
                 <%= link_to(image_tag("Trails/blue-moderate.png", :style => 'width:42.5%;', :alt => "Blue-Moderate", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Blue - Moderate')%>
                 <%= link_to(image_tag("Trails/Black-difficult.png", :style => 'width:40%;', :alt => "Blach-Difficult", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Black - Difficult') %>
               </td>
-              <td>40 mi. </td>
-              <td>Rangely Junior/Senior Hight School</td>
-              <td>Yes</td>
-              <td><a href="https://drive.google.com/open?id=1K9E72iRymM8nd_rfmiqGuMIUUwzWU5Xs" title="Download PDF Map of Texas Mountain" target="_blank">PDF Map</a></td>
+              <td>25 mi. </td>
+              <td>No</td>
+              <td><a href="https://drive.google.com/open?id=1YVAYcimR6IPud1cOpOFIYlC8mSonNd4u" title="Download PDF Map of Texas Mountain" target="_blank">PDF Map</a></td>
             </tr>
           </table>
           <hr />
         </div>
 
-        <p><strong>Trail Description:</strong> The trail includes groomed graveled roads, loose dirt, rock and eroded areas with some washed out
-        area of the trail. This ride.</p>
+        <p><strong>Trail Description:</strong> The trail includes groomed graveled roads, loose dirt, rock and eroded areas with some washed out area of trail.</p>
 
         <p><strong>Direction to Trailshead:</strong> No Trailering - Apx. 19 mi. to parking area at CR 23.</p>
 
         <p><strong>Route:</strong> Start at CR 116, CR 109. BLM1064, BLM1210, BLM1063, BLM1062, BLM1063, BLM1210, CR 116.</p>
 
         <p><strong>The Ride:</strong> This ride features one of the most impressive scenic overlooks of the Rangely area. This ride includes part of the recent Dead
-        Dog Fire that occurred in Rangely spring of 2017. Enjoy slick rock riding, dry creek crossings and riding up the creek bottom. Riders
-        will experience a 25-mile ride.</p>
+        Dog Fire that occurred in Rangely spring of 2017. Enjoy slick rock riding, dry creek crossings and riding up the creek bottom. Riders will experience a 25-mile ride.</p>
 
       </div>
     </div>
@@ -169,7 +169,7 @@
     </div>
     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
       <div class="card-body">
-        <p class="text-center"><%= image_tag("Trails/ROARBigridge.jpg", :alt => "Big Ridge Loop Map", :class => "img-fluid img-thumbnail") %></p>
+        <p class="text-center"><%= link_to(image_tag("Trails/ROARBigridge.jpg", :alt => "Big Ridge Loop Map", :class => "img-fluid img-thumbnail"), "https://drive.google.com/open?id=1T6R_Et3YUW3TroBjrikQXbS3kj84puaC", target: "blank") %></p>
 
         <h2>Big Ridge Loop</h2>
         <div class="table-responsive-sm">
@@ -177,7 +177,6 @@
             <tr class="text-center">
               <th width="15%">Rating</th>
               <th>Miles</th>
-              <th>Meeting Place</th>
               <th>Parking at Trailhead</th>
               <th>Download Map</th>
             </tr>
@@ -186,25 +185,23 @@
                 <%= link_to(image_tag("Trails/blue-moderate.png", :style => 'width:42.5%;', :alt => "Blue-Moderate", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Blue - Moderate')%>
                 <%= link_to(image_tag("Trails/Black-difficult.png", :style => 'width:40%;', :alt => "Blach-Difficult", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Black - Difficult') %>
               </td>
-              <td>40 mi. </td>
-              <td>Rangely Junior/Senior Hight School</td>
-              <td>Yes</td>
+              <td>30 mi. </td>
+              <td>No</td>
               <td><a href="https://drive.google.com/open?id=1T6R_Et3YUW3TroBjrikQXbS3kj84puaC" title="Download PDF Map of Texas Mountain" target="_blank">PDF Map</a></td>
             </tr>
           </table>
           <hr />
         </div>
 
-        <p><strong>Trail Description:</strong> The trail includes groomed graveled roads, loose dirt, rock and eroded areas with some washed out
-        area of the trail. This ride.</p>
+        <p><strong>Trail Description:</strong> This trail is mostly two track, off camber with rocky faces and ledges along with groomed graveled roads. Expect to have washed out sections of trail,
+        deep ruts and stream crossings.</p>
 
-        <p><strong>Direction to Trailshead:</strong> No Trailering - Apx. 19 mi. to parking area at CR 23.</p>
+        <p><strong>Direction to Trailshead:</strong> No Trailering.</p>
 
-        <p><strong>Route:</strong> Start at CR 116, CR 109. BLM1064, BLM1210, BLM1063, BLM1062, BLM1063, BLM1210, CR 116.</p>
+        <p><strong>Route:</strong>Start at CR104, BLM1040, BLM1042, CR104</p>
 
-        <p><strong>The Ride:</strong> This ride features one of the most impressive scenic overlooks of the Rangely area. This ride includes part of the recent Dead
-        Dog Fire that occurred in Rangely spring of 2017. Enjoy slick rock riding, dry creek crossings and riding up the creek bottom. Riders
-        will experience a 25-mile ride.</p>
+        <p><strong>The Ride:</strong> Enjoy steep draws, tight turns and narrow trails durning this ride. Ride through the canyon and pop up on the ridge to experien e beautiful vistas from the top of Big Ridge.
+        Riders will experience a 30 mile ride that leaves from Rangely.</p>
       </div>
     </div>
   </div>
@@ -220,7 +217,7 @@
     </div>
     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
       <div class="card-body">
-        <p class="text-center"><%= image_tag("Trails/ROARCottonwoodLoop(2).jpg", :alt => "Cottonwood Loop Map", :class => "img-fluid img-thumbnail") %></p>
+        <p class="text-center"><%= link_to(image_tag("Trails/ROARCottonwoodLoop(2).jpg", :alt => "Cottonwood Loop Map", :class => "img-fluid img-thumbnail"), "https://drive.google.com/open?id=1qYYbH4mNu6mR8Dg2zDSziz0o-XIB0Nb8", target: "blank") %></p>
 
         <h2>Cottonwood Loop</h2>
         <div class="table-responsive-sm">
@@ -228,7 +225,6 @@
             <tr class="text-center">
               <th width="15%">Rating</th>
               <th>Miles</th>
-              <th>Meeting Place</th>
               <th>Parking at Trailhead</th>
               <th>Download Map</th>
             </tr>
@@ -237,21 +233,19 @@
                 <%= link_to(image_tag("Trails/blue-moderate.png", :style => 'width:42.5%;', :alt => "Blue-Moderate", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Blue - Moderate')%>
                 <%= link_to(image_tag("Trails/Black-difficult.png", :style => 'width:40%;', :alt => "Blach-Difficult", :class => "img-fluid img-thumbnail"), trail_ratings_url, :title => 'Trail Rating: Black - Difficult') %>
               </td>
-              <td>40 mi. </td>
-              <td>Rangely Junior/Senior Hight School</td>
-              <td>Yes</td>
+              <td>58 mi. </td>
+              <td>No</td>
               <td><a href="https://drive.google.com/open?id=1qYYbH4mNu6mR8Dg2zDSziz0o-XIB0Nb8" title="Download PDF Map of Texas Mountain" target="_blank">PDF Map</a></td>
             </tr>
           </table>
           <hr />
         </div>
 
-        <p><strong>Trail Description:</strong> The trail includes groomed graveled roads, loose dirt, rock and eroded areas with some washed out
-        area of the trail. This ride.</p>
+        <p><strong>Trail Description:</strong> The trail includes groomed graveled road, rocky sections, and loose gravel.</p>
 
-        <p><strong>Direction to Trailshead:</strong> No Trailering - Apx. 19 mi. to parking area at CR 23.</p>
+        <p><strong>Direction to Trailshead:</strong> No Trailering</p>
 
-        <p><strong>Route:</strong> Start at CR 116, CR 109. BLM1064, BLM1210, BLM1063, BLM1062, BLM1063, BLM1210, CR 116.</p>
+        <p><strong>Route:</strong> Start at CR2, BLM1071, BLM1070, CR23, CR113, BLM1045A, BLM1072, CR2</p>
 
         <p><strong>The Ride:</strong> This ride features one of the most impressive scenic overlooks of the Rangely area. This ride includes part of the recent Dead
         Dog Fire that occurred in Rangely spring of 2017. Enjoy slick rock riding, dry creek crossings and riding up the creek bottom. Riders
