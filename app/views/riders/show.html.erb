@@ -1,13 +1,14 @@
 <% title "Registration Conformation" %>
 
-<h3>Thank you for joining us on Aug 9-11 for our annual ROAR Event</h3>
-
-<p>We Look forward to seeing on the trails soon and sharing our memories with you.</p>
-<p> Here is an electronic Reciept/Comfromation. Please print a copy and bring it with you to checkin.</p>
 
 <div class="row">
-  <div class="col-7 pt-4">
-    <div class="table-responsive">
+  <div class="col-sm-8 offset-sm-1">
+    <h3 class="text-center">Thank you for joining us on Aug 9-11 for our annual ROAR Event</h3>
+
+    <p class="text-center">We Look forward to seeing on the trails soon and sharing our memories with you.</p>
+    <p class="text-center">Here is an electronic Reciept/Comfromation. Please print a copy and bring it with you to checkin.</p>
+
+    <div class="table-responsive pt-4">
       <table class="table table-bordered">
         <tr>
           <th colspan="3" class="text-center"><h3>Registration Receipt</h3></th>
@@ -25,7 +26,7 @@
         <tr>
           <td class="text-left">Riders over 10</td>
           <td><%= @pass_pay %> <small>x @70.00</small></td>
-          <td><%= @trc %></td>
+          <td><%= number_to_currency(@trc) %></td>
         </tr>
         <tr>
           <td class="text-left">Lunches</td>
@@ -41,7 +42,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-6 offset-sm-6">
-    <a href="javascript:window.print()" class="btn btn-md btn-success">Print Receipt</a>
+  <div class="col-sm-4 offset-sm-8">
+    <a href="javascript:window.print()" class="btn btn-lg btn-success" disable>Print Receipt</a>
   </div>
 </div>
