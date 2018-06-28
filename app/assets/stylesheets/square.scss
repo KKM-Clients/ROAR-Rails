@@ -94,9 +94,9 @@
 }
 
 #sq-ccbox {
-  float:left;
+  /*float:left;
   margin:5px;
-  padding:10px;
+  padding:10px;*/
   text-align: center;
   vertical-align: top;
   font-weight: bold;
@@ -107,19 +107,13 @@
     position: absolute;
     top: 100%;
     z-index: 5;
+    /*display: none;*/
     max-width: 100%;
     padding: .5rem;
     margin-top: -1.3rem;
-    margin-bottom: 100rem;
     font-size: .875rem;
     line-height: 1;
     color: #fff;
     background-color: rgba(220, 53, 69, 0.8);
     border-radius: .2rem;
-}
-
-#expirationDate.invalid{
-  top: 58px;
-
-
 }
