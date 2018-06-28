@@ -44,7 +44,11 @@ var paymentForm = new SqPaymentForm({
   inputStyles: [{
       fontSize: '.9em',
       padding: '10px'
-  }],
+  },
+  {
+      mediaMaxWidth: '400px',
+      fontSize: '18px',
+    }],
 
   // Initialize Apple Pay placeholder ID
   applePay: false,
@@ -136,13 +140,19 @@ var paymentForm = new SqPaymentForm({
         // Log errors from nonce generation to the Javascript console
         console.log("Encountered errors:");
         errors.forEach(function(error) {
-          console.log('  ' + error.message);
+          //console.log('  ' + error.message );
+
+          //alert(error.field + ' - ' + error.message);
+          // print error message to page with association field
+          document.getElementById(error.field).innerHTML = error.message;
+          document.getElementById(error.field).style.display = "block";
+
         });
 
         return;
       }
 
-      /*alert('Nonce received: ' + nonce); /* FOR TESTING ONLY */
+      alert('Nonce received: ' + nonce); /* FOR TESTING ONLY */
 
       // Assign the nonce value to the hidden form field
       document.getElementById('card-nonce').value = nonce;
@@ -156,6 +166,7 @@ var paymentForm = new SqPaymentForm({
      * callback function: unsupportedBrowserDetected
      * Triggered when: the page loads and an unsupported browser is detected
      */
+
     unsupportedBrowserDetected: function() {
       /* PROVIDE FEEDBACK TO SITE VISITORS */
     },

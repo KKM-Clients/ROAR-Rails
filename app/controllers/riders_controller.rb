@@ -23,7 +23,7 @@ class RidersController < ApplicationController
 
       #Rider.update(rid, :pass => count)
 
-      redirect_to :controller => 'square', :action => 'index'
+      redirect_to :controller => 'square', :action => 'new'
     else
       render :new
     end

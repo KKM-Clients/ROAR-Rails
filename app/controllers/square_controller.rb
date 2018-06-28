@@ -2,8 +2,8 @@ class SquareController < ApplicationController
   #before_action :set_order, only: [:show, :edit, :update, :destroy]
   #respond_to :html, :json
 
-  def index
-    @date = Date.today.to_s
+  def new
+    date = Date.today.to_s
 
     @rider = Rider.last
 
@@ -15,7 +15,7 @@ class SquareController < ApplicationController
 
     #total rider cost
 
-    if @date == "2018-07-31"
+    if date == "2018-07-31"
       @trc = @pass_pay * 75     #total rider cost
     else
       @trc = @pass_pay * 70     #total rider cost
@@ -92,15 +92,15 @@ class SquareController < ApplicationController
       rescue SquareConnect::ApiError => e
         raise "Error encountered while charging card: #{e.message}"
 
+        return
+
       end
 
-      @refid = resp.transaction.reference_id
-      @amount = resp.transaction.tenders[0].amount_money.amount / 100
+      refid = resp.transaction.reference_id
+      #amount = resp.transaction.tenders[0].amount_money.amount / 100
 
-      #add add refid to db as Regid
-      Rider.update(@rider.id, :regid => @refid)
-
-      #raise @resp.inspect
+      #add refid to db as Regid
+      Rider.update(@rider.id, :regid => refid)
 
       # Send receipt email to user
       #ReceiptMailer.charge_email(params[:email],data).deliver_now if Rails.env == "development"
@@ -109,8 +109,6 @@ class SquareController < ApplicationController
 
       redirect_to @rider
     else
-      flash[:notice] = "Invalied CC please resubmit."
-
       render :new
     end
   end

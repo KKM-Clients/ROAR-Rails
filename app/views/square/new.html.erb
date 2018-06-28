@@ -1,12 +1,16 @@
 <% title "Registration Conformation" %>
 
+<% if flash[:error] %>
+  <%= flash[:error] %>
+<% end %>
 
 <div id="sq-ccbox">
   <!--
     You should replace the action attribute of the form with the path of
     the URL you want to POST the nonce to (for example, "/process-card")
   -->
-  <%= form_with scope: :square, url: square_index_path, :class => "needs-validation", :id => "nonce-form", novalidate: true do |f| %>
+
+<%= form_with scope: :square, url: square_index_path, :class => "needs-validation", :id => "nonce-form", novalidate: true do |f| %>
       <div class="table-responsive">
           <table class="table table-bordered">
             <tr>
@@ -20,35 +24,36 @@
               <td rowspan="5" width="40%">
                 <div class="form-group row">
                   <label for="sq-card-number" class="col-sm-4 col-form-label">Card Number:</label>
-                  <div class="col-sm-5">
+                  <div class="col-sm-4">
                     <input type="text" class="form-control" id="sq-card-number" placeholder="Card Number" required>
+                    <div id="cardNumber" class="invalid" style = "display: none"></div>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="sq-cvv" class="col-sm-4 col-form-label">CVV:</label>
-                  <div class="col-sm-5">
+                  <div class="col-sm-4">
                     <input type="text" class="form-control" id="sq-cvv" placeholder="CVV" required>
+                    <div id="cvv" class="invalid" style = "display: none"></div>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="sq-expiration-date" class="col-sm-4 col-form-label">Expiration Date:</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" name="expdate" id="sq-expiration-date" placeholder="Expiration Date" required>
-                    <div class="invalid-tooltip">
-                      Please provide an Experation Date.
-                    </div>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" name="exp-date" id="sq-expiration-date" placeholder="Expiration Date - " required>
+                    <div id="expirationDate" class="invalid" style = "display: none"></div>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="sq-postal-code" class="col-sm-4 col-form-label">Postal Code:</label>
-                  <div class="col-sm-5">
+                  <div class="col-sm-4">
                     <input type="text" class="form-control" id="sq-postal-code" placeholder="Postal Code" required>
+                    <div id="postalCode" class="invalid" style = "display: none"></div>
                   </div>
                 </div>
 
                 <div class="form-group row">
-                  <div class="col-sm-11 offset-sm-1">
-                    <button id="sq-creditcard" class="btn btn-lg btn-primary" onclick="requestCardNonce(event)">
+                  <div class="col-sm-10 offset-sm-2">
+                    <button id="sq-creditcard" class="btn btn-md btn-primary" onclick="requestCardNonce(event)">
                       Pay with card
                     </button>
                   </div>
