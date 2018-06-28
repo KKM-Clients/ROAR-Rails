@@ -185,6 +185,10 @@ var paymentForm = new SqPaymentForm({
           break;
         case 'errorClassAdded':
           /* HANDLE AS DESIRED */
+          document.getElementById('sq-card-number').on(function(){
+            //document.getElementById("cardNumber").style.display = "none";
+            alet("WOOT WOOT!!");
+          });
           break;
         case 'errorClassRemoved':
           /* HANDLE AS DESIRED */

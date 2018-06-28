@@ -17,6 +17,8 @@
   margin-bottom: 25px;
 }
 
+
+
 /* Customize the "Pay with Credit Card" button */
 .button-credit-card {
   min-width: 200px;
@@ -103,11 +105,11 @@
 }
 
 /********* custion error form bootstrap **********/
-.invalid {
+.invalid{
     position: absolute;
     top: 100%;
     z-index: 5;
-    /*display: none;*/
+    display: none;
     max-width: 100%;
     padding: .5rem;
     margin-top: -1.3rem;
