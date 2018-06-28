@@ -123,6 +123,3 @@
 })(jQuery);
 
 /*********** bootstrap validation **********/
-$('iframe').contents().find('#sq-card-number').onchange(function(){
-  $("#cardNumber").style.display.none
-})
