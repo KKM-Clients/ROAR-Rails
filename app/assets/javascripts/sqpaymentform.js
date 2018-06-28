@@ -185,9 +185,8 @@ var paymentForm = new SqPaymentForm({
           break;
         case 'errorClassAdded':
           /* HANDLE AS DESIRED */
-          document.getElementById('sq-card-number').on(function(){
-            //document.getElementById("cardNumber").style.display = "none";
-            alet("WOOT WOOT!!");
+          document.getElementById('sq-card-number').onchange(function(){
+            document.getElementById("cardNumber").style.display = "none";
           });
           break;
         case 'errorClassRemoved':
