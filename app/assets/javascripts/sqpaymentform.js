@@ -187,12 +187,6 @@ var paymentForm = new SqPaymentForm({
           /* HANDLE AS DESIRED */
           break;
         case 'errorClassRemoved':
-          /* HANDLE AS DESIRED */
-
-          document.getElementById("cardNumber").style.display = "none";
-          document.getElementById("cvv").style.display = "none";
-          document.getElementById("expirationDate").style.display = "none";
-          document.getElementById("postalCode").style.display = "none";
           break;
         case 'cardBrandChanged':
           /* HANDLE AS DESIRED */

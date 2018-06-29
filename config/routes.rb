@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   #get 'rules_regs/show'
 
   get 'home/index'
-
+  
   resources :rules_regs
   resources :trail_ratings
   resources :trails
