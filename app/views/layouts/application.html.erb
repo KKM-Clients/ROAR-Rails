@@ -8,7 +8,9 @@
 
     <!-- Title -->
     <% if yield(:title).empty? %>
+    <div id="homepage">
       <%= yield %>
+    </div>
     <% else %>
       <!-- top page title row -->
       <div class="container-fluid" id="page">

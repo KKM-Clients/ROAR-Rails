@@ -44,11 +44,7 @@ var paymentForm = new SqPaymentForm({
   inputStyles: [{
       fontSize: '.9em',
       padding: '10px'
-  },
-  {
-      mediaMaxWidth: '400px',
-      fontSize: '18px',
-    }],
+  }],
 
   // Initialize Apple Pay placeholder ID
   applePay: false,
@@ -144,8 +140,9 @@ var paymentForm = new SqPaymentForm({
 
           //alert(error.field + ' - ' + error.message);
           // print error message to page with association field
-          document.getElementById(error.field).innerHTML = error.message;
-          document.getElementById(error.field).style.display = "block";
+
+          //document.getElementById(error.field).innerHTML = error.message;
+          //document.getElementById(error.field).style.display = "block";
 
         });
 
