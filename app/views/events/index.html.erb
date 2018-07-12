@@ -1,5 +1,7 @@
 <% title "Events" %>
 
+<h3>2018 Events Schedule</h3>
+
 <div id="accordion">
   <!-- Colorado Seaplane -->
   <div class="card">
@@ -11,7 +13,7 @@
       </h5>
     </div>
 
-    <div id="collapseRally" class="collapse show" aria-labelledby="headingRally" data-parent="#accordion">
+    <div id="collapseRally" class="collapse <% if @date < @csp_closed %>show <% end %>" aria-labelledby="headingRally" data-parent="#accordion">
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/cspi.jpg", :alt => "Colorado Seaplane Inititaive", :class =>"img-fluid img-thumbnail") %></p>
 
@@ -51,7 +53,7 @@
       </h5>
     </div>
 
-    <div id="collapseRally" class="collapse show" aria-labelledby="headingRally" data-parent="#accordion">
+    <div id="collapseRally" class="collapse <% if @date.between?(@csp_closed, @rc_closed) %>show <% end %>" aria-labelledby="headingRally" data-parent="#accordion">
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/Rally-Colorado.png", :alt => "Rally Colorado", :class =>"img-fluid img-thumbnail") %></p>
 
@@ -102,7 +104,7 @@
       </h5>
     </div>
 
-    <div id="collapseROAR" class="collapse" aria-labelledby="headingROAR" data-parent="#accordion">
+    <div id="collapseROAR" class="collapse <% if @date.between?(@rc_closed, @roar_closed) %>show <% end %>" aria-labelledby="headingROAR" data-parent="#accordion">
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/Banner-logo-ROAR.png", :alt => "ROAR", :class =>"img-fluid img-thumbnail") %></p>
 
@@ -127,6 +129,7 @@
           </table>
           <hr />
         </div>
+
         <h2>ROAR</h2>
         <p>Rangley OHV Adventure Rally is a three day event on the Wagon Wheel West OHV trail system. The event kicks off with a fun ride at dusk to Kenney Reservoir, and ends with a musical concert at the park. During the event you can find many different things to do such as guided rides, The Amazing Quest, an OHV rodeo, a poker run hosted by Rio Blanco County Search & Rescue, an ongoing OHV expo, scavenger hunts, and hundreds of miles of trails for open riding. Included in those trails, is the only designated rock crawling park In Colorado! Come test out your car on some of the most difficult obstacles around.</p>
 
@@ -230,11 +233,11 @@
     <div class="card-header" id="headingCPHC">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseCPHC" aria-expanded="false" aria-controls="collapseCPHC">
-          Canyon Pintado Hill Climb: TBD
+          Canyon Pintado Hill Climb: Sept 8-9
         </button>
       </h5>
     </div>
-    <div id="collapseCPHC" class="collapse" aria-labelledby="headingCPHC" data-parent="#accordion">
+    <div id="collapseCPHC" class="collapse <% if @date.between?(@roar_closed, @cphc_closed) %>show <% end %>" aria-labelledby="headingCPHC" data-parent="#accordion">
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/Rally-Colorado.png", :alt => "Canyon Pintado Hill Climb", :class =>"img-fluid img-thumbnail") %></p>
 
@@ -269,4 +272,5 @@
     </div>
   </div>
   <!-- End Canyon Pintado Hill Climb -->
+</div>
 <p>&nbsp;</p>
