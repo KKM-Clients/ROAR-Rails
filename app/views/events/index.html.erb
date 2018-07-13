@@ -5,19 +5,19 @@
 <div id="accordion">
   <!-- Colorado Seaplane -->
   <div class="card">
-    <div class="card-header" id="headingRally">
+    <div class="card-header" id="headingCSP">
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseRally" aria-expanded="true" aria-controls="collapseRally">
-          Moutain Splash-In: July 14
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseCSP" aria-expanded="true" aria-controls="collapseCSP">
+          Colorado Seaplane: July 14
         </button>
       </h5>
     </div>
 
-    <div id="collapseRally" class="collapse <% if @date < @csp_closed %>show <% end %>" aria-labelledby="headingRally" data-parent="#accordion">
+    <div id="collapseCSP" class="collapse show" aria-labelledby="headingCSP" data-parent="#accordion">
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/cspi.jpg", :alt => "Colorado Seaplane Inititaive", :class =>"img-fluid img-thumbnail") %></p>
 
-        <h2>Colorado Seaplane</h2>
+        <h2>Moutain Splash-In</h2>
         <div class="table-responsive-sm">
           <table class="table">
             <tr class="text-center">
@@ -108,6 +108,8 @@
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/Banner-logo-ROAR.png", :alt => "ROAR", :class =>"img-fluid img-thumbnail") %></p>
 
+        <h2>ROAR</h2>
+
         <div class="table-responsive-sm">
           <table class="table">
             <tr class="text-center">
@@ -130,7 +132,6 @@
           <hr />
         </div>
 
-        <h2>ROAR</h2>
         <p>Rangley OHV Adventure Rally is a three day event on the Wagon Wheel West OHV trail system. The event kicks off with a fun ride at dusk to Kenney Reservoir, and ends with a musical concert at the park. During the event you can find many different things to do such as guided rides, The Amazing Quest, an OHV rodeo, a poker run hosted by Rio Blanco County Search & Rescue, an ongoing OHV expo, scavenger hunts, and hundreds of miles of trails for open riding. Included in those trails, is the only designated rock crawling park In Colorado! Come test out your car on some of the most difficult obstacles around.</p>
 
         <p>Come ride the High Mountain Desert of God's Country!!!!!</p>
@@ -228,20 +229,20 @@
     </div>
   </div>
 
-  <!-- Canyon Pintado Hill Climb -->
+  <!-- Canyon Pintado Hillclimb -->
   <div class="card">
     <div class="card-header" id="headingCPHC">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseCPHC" aria-expanded="false" aria-controls="collapseCPHC">
-          Canyon Pintado Hill Climb: Sept 8-9
+          Canyon Pintado Hillclimb: Sept 8-9
         </button>
       </h5>
     </div>
     <div id="collapseCPHC" class="collapse <% if @date.between?(@roar_closed, @cphc_closed) %>show <% end %>" aria-labelledby="headingCPHC" data-parent="#accordion">
       <div class="card-body">
-        <p class="text-center"><%= image_tag("Events/Rally-Colorado.png", :alt => "Canyon Pintado Hill Climb", :class =>"img-fluid img-thumbnail") %></p>
+        <p class="text-center"><%= image_tag("Events/Rally-Colorado.png", :alt => "Canyon Pintado Hillclimb", :class =>"img-fluid img-thumbnail") %></p>
 
-        <h2>Canyon Pintado Hill Climb</h2>
+        <h2>Canyon Pintado Hillclimb</h2>
         <div class="table-responsive-sm">
           <table class="table">
             <tr class="text-center">
@@ -261,13 +262,7 @@
         </div>
 
         <p>Description coming</p>
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-        id est laborum.</p> -->
-
-        <!-- <button class="btn btn-sm btn-default">Print Schedule</button> -->
+        
       </div>
     </div>
   </div>

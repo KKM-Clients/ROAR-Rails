@@ -1,0 +1,13 @@
+<% title "ROAR" %>
+
+
+<h3>2017 Rally Colorado- Creating 2018 Memories</h3>
+<div class="row">
+  <% @images.each_slice(3) do |slice| %>
+    <% slice.each do |pic| %>
+      <div class="col-sm-4  p-3">
+        <%= image_tag(pic, :class => "img-fluid img-thumbnail")  %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

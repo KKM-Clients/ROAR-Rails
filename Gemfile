@@ -75,3 +75,5 @@ gem 'square_connect'
 
 ##Figaro ENV
 gem 'figaro'
+
+#photo gallery
