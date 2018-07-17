@@ -1,0 +1,20 @@
+<% title @page %>
+
+
+<% if @images.empty? %>
+  <div class="col-sm-10 p-3">
+    <h4 class="pt-3 text-center">This is a New Event!!!</h4>
+    <h4 class="pt-3 text-center">We are creating New Memories for 2018</h4>
+    <h4 class="pt-3 text-center">Join us in the creation  at the  <%= link_to @page, events_index_url %> in Sept</h4>
+    <h4 class="pt-3 text-center">Or check back in Oct 2018 for images of this years first Hillclimb.</h4>
+  </div>
+<% else %>
+  <h3> <%= @event_year %> Memories</h3>
+  <div class="row">
+    <% @images.each do |img| %>
+      <div class="col-sm-4 photo p-3">
+        <%= image_tag(img, :class => "img-fluid img-thumbnail")  %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,38 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'gallery/index'
+  #get 'gallery/index'
   get 'events/index'
   root "home#index"
 
-  #get 'vendors/index'
-  #get 'vendors/create'
-  #get 'vendors/new'
-  #get 'vendors/show'
-
-  #get 'riders/index'
-  #get 'riders/create'
-  #get 'riders/new'
-  #get 'riders/show'
-
-  #get 'trail_ratings/index'
-  #get 'trail_ratings/create'
-  #get 'trail_ratings/new'
-  #get 'trail_ratings/show'
-
-  #get 'lodging/index'
-  #get 'lodging/create'
-  #get 'lodging/new'
-  #get 'lodging/show'
-
-  #get 'trails/index'
-  #get 'trails/create'
-  #get 'trails/new'
-  #get 'trails/show'
-
-  #get 'rules_regs/index'
-  #get 'rules_regs/create'
-  #get 'rules_regs/new'
-  #get 'rules_regs/show'
 
   get 'home/index'
 
@@ -43,13 +14,16 @@ Rails.application.routes.draw do
   resources :vendors
   resources :lodging
   resources :square
+  resources :gallery
 
   get 'contact/index'
 
+  get "/pages/*page" => "pages#show" # all requests matching site/any_page will go PagesController, show method
+
   # other routes ...
- PagesController.action_methods.each do |action|
+  PagesController.action_methods.each do |action|
    get "/#{action}", to: "pages##{action}", as: "#{action}_page"
- end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

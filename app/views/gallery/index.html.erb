@@ -9,22 +9,22 @@
 <!-- Row 1 -->
 <div class="row">
   <div class="col-sm-6">
-    <%= link_to(image_tag("Gallery/CSP.jpg", :alt => "Colorado Seaplane Inititaive", :class => "img-fluid img-thumbnail"), seaplane_page_url) %>
-    <h3 class="text-center"><%= link_to("Colorado Seaplane", seaplane_page_url) %></h3>
+    <%= link_to(image_tag("Gallery/CSP.jpg", :alt => "Colorado Seaplane Inititaive", :class => "img-fluid img-thumbnail"), new_gallery_path(@galler, :page => "seaplane")) %>
+    <h3 class="text-center"><%= link_to("Colorado Seaplane", new_gallery_path(@galler, :page => "seaplane")) %></h3>
   </div>
   <div class="col-sm-6">
-    <%= link_to(image_tag("Gallery/RallyColorado.png", :alt => "Rally Colorado", :class => "img-fluid img-thumbnail"), rally_page_url) %>
-    <h3 class="text-center"><%= link_to("Rally Colorado", rally_page_url) %></h3>
+    <%= link_to(image_tag("Gallery/RallyColorado.png", :alt => "Rally Colorado", :class => "img-fluid img-thumbnail"), new_gallery_path(@galler, :page => "rally colorado")) %>
+    <h3 class="text-center"><%= link_to("Rally Colorado", new_gallery_path(@galler, :page => "rally colorado")) %></h3>
   </div>
 </div>
 <!-- Row 2 -->
 <div class="row">
   <div class="col-sm-6">
-    <%= link_to(image_tag("Gallery/ROAR.jpg", :alt => "ROAR", :class => "img-fluid img-thumbnail"), roar_page_url) %>
-    <h3 class="text-center"><%= link_to("ROAR", roar_page_url) %></h3>
+    <%= link_to(image_tag("Gallery/ROAR.jpg", :alt => "ROAR", :class => "img-fluid img-thumbnail"), new_gallery_path(@galler, :page => "roar")) %>
+    <h3 class="text-center"><%= link_to("ROAR", new_gallery_path(@galler, :page => "roar")) %></h3>
   </div>
   <div class="col-sm-6">
-    <%= link_to(image_tag("Gallery/Hillclimb.jpg", :alt => "Canyon Pintado Hillclimb", :class => "img-fluid img-thumbnail"), hillclimb_page_url) %>
-    <h3 class="text-center"><%= link_to("Canyon Pintado Hillclimb", hillclimb_page_url) %></h3>
+    <%= link_to(image_tag("Gallery/Hillclimb.jpg", :alt => "Canyon Pintado Hillclimb", :class => "img-fluid img-thumbnail"), new_gallery_path(@galler, :page => "canyon pintado hillclimb")) %>
+    <h3 class="text-center"><%= link_to("Canyon Pintado Hillclimb", new_gallery_path(@galler, :page => "canyon pintado hillclimb")) %></h3>
   </div>
 </div>
