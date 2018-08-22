@@ -3,20 +3,26 @@
   <%= render "head" %>
 
   <body>
+    <a class="skip-link sr-only" href="#content">Skip to content</a>
     <!-- Navigation -->
     <%= render "nav" %>
 
     <!-- Title -->
     <% if yield(:title).empty? %>
-    <div id="homepage" class="text-center">
+      <div id="homepage" class="text-center">
       <%= yield %>
     </div>
+
+    <div id="content">
+      <p>Welcome to Rangely OHV Adventure Rally. We offer a range of trails for all skill levels.
+      Checkout our trails and come take a ride. We look forward to seeing you in our town soon.</p>
+    </div>
     <% else %>
-      <!-- top page title row -->
+      <!-- top page title row -->>
       <div class="container-fluid" id="page">
         <div class="row">
           <div class="col-sm-12 pl-4 pb-4">
-            <h1><a id="top"><%= yield(:title) %></a></h1>
+          <h1><a id="top"><%= yield(:title) %></a></h1>
           </div>
         </div>
       </div>
@@ -31,7 +37,7 @@
           </div>
 
           <!-- Page Content Column -->
-          <div class="col-md-9 pl-5">
+          <div class="col-md-9 pl-5"  id="content">
             <%= yield %>
           </div>
         </div>

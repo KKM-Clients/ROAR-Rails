@@ -13,8 +13,7 @@
       </h5>
     </div>
 
-    <div id="collapseCSP" class="collapse" aria-labelledby="headingCSP" data-parent="#accordion">
-      <div class="card-body">
+    <div id="collapseCSP" class="collapse <% if $date < ($csp_closed) %>show <% end %>" aria-labelledby="headingCSP" data-parent="#accordion">
         <p class="text-center"><%= image_tag("Events/cspi.jpg", :alt => "Colorado Seaplane Inititaive", :class =>"img-fluid img-thumbnail") %></p>
 
         <h2>Moutain Splash-In</h2>
@@ -53,7 +52,7 @@
       </h5>
     </div>
 
-    <div id="collapseRally" class="collapse <% if @date.between?(@csp_closed, @rc_closed) %>show <% end %>" aria-labelledby="headingRally" data-parent="#accordion">
+    <div id="collapseRally" class="collapse <% if $date.between?($csp_closed, $rc_closed) %>show <% end %>" aria-labelledby="headingRally" data-parent="#accordion">
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/Rally-Colorado.png", :alt => "Rally Colorado", :class =>"img-fluid img-thumbnail") %></p>
 
@@ -104,7 +103,7 @@
       </h5>
     </div>
 
-    <div id="collapseROAR" class="collapse <% if @date.between?(@rc_closed, @roar_closed) %>show <% end %>" aria-labelledby="headingROAR" data-parent="#accordion">
+    <div id="collapseROAR" class="collapse <% if $date.between?($rc_closed, $roar_closed) %>show <% end %>" aria-labelledby="headingROAR" data-parent="#accordion">
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/Banner-logo-ROAR.png", :alt => "ROAR", :class =>"img-fluid img-thumbnail") %></p>
 
@@ -254,7 +253,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseCPHC" class="collapse <% if @date.between?(@roar_closed, @cphc_closed) %>show <% end %>" aria-labelledby="headingCPHC" data-parent="#accordion">
+    <div id="collapseCPHC" class="collapse <% if $date.between?($roar_closed, $cphc_closed) %>show <% end %>" aria-labelledby="headingCPHC" data-parent="#accordion">
       <div class="card-body">
         <p class="text-center"><%= image_tag("Events/Rally-Colorado.png", :alt => "Canyon Pintado Hillclimb", :class =>"img-fluid img-thumbnail") %></p>
 
@@ -264,13 +263,11 @@
             <tr class="text-center">
               <th>Type</th>
               <th>Date</th>
-              <th>Staging</th>
               <th>Download Schedule</th>
             </tr>
             <tr class="text-center">
               <td>Spectator</td>
-              <td>TBD</td>
-              <td>TBD</td>
+              <td>Sept 8-9</td>
               <td>Print Schedule</td>
             </tr>
           </table>
