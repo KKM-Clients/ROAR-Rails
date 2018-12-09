@@ -18,8 +18,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Registration</a>
         <div class="dropdown-menu">
-          <!--<%= link_to "Rider", riders_url, :class => "dropdown-item" %> -->
-          <a <% if $roar_closed < $date %>hidden<% end %> href="https://www.eventbrite.com/e/rangely-ohv-adventure-rally-roar-tickets-46452798571" target="_blank" class="dropdown-item">Rider</a>
+          <%= link_to "Rider", riders_url, :class => "dropdown-item" %>
+          <a <% if $roar_closed < $date %>hidden<% end %> href="https://www.eventbrite.com/e/rangely-ohv-adventure-rally-roar-tickets-46452798571" target="_blank" class="dropdown-item">Eventbrite</a>
           <%= link_to "Vendor", vendors_url, :class => "dropdown-item" %>
         </div>
       </li>

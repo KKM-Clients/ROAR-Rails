@@ -1,151 +1,140 @@
+  <% title "Rider Registration" %>
 
-      <% title "Rider Registration" %>
+  <div class="row">
+    <div class="col-9">
 
-      <%= form_for @rider do |f| %>
-        <%= f.hidden_field :RRCW, :value => "yes" %>
-        <div class="row">
-          <div class="col-sm-9 offset-sm-1">
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <!-- Driver Informaton -->
-                <tr>
-                  <th  colspan="2"><h3>Driver Information</h3></th>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:DFN, "First Name:", class: "sr-only") %>
-                    <%= f.text_field(:DFN, {class: "form-control mb-2 mr-sm-2", placeholder: "Drivers First Name", :required => true}) %>
-                  </td>
-                  <td>
-                    <%= f.label(:DLN, "First Name:", class: "sr-only") %>
-                    <%= f.text_field(:DLN, {class: "form-control mb-2 mr-sm-2", placeholder: "Drivers Last Name", :required => true}) %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:DMA, "Stree Number:", class: "sr-only") %>
-                    <%= f.text_field(:DMA, {class: "form-control mb-2 mr-sm-2", placeholder: "Street Address"}) %>
-                  </td>
-                  <td>
-                    <%= f.label(:DC, "City:", class: "sr-only") %>
-                    <%= f.text_field(:DC, {class: "form-control mb-2 mr-sm-2", placeholder: "City"}) %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:DS, "State:", class: "sr-only") %>
-                    <%= f.text_field(:DS, {class: "form-control mb-2 mr-sm-2", placeholder: "State"}) %>
-                  </td>
-                  <td>
-                    <%= f.label(:DZ, "Zipcode:", class: "sr-only") %>
-                    <%= f.text_field(:DZ, {class: "form-control mb-2 mr-sm-2", placeholder: "Zipcode"}) %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:DCP, "Cell Phone:", class: "sr-only") %>
-                    <%= f.text_field(:DCP, {class: "form-control mb-2 mr-sm-2", placeholder: "Drivers Cell Phone", :required => true}) %>
-                  </td>
-                  <td>
-                    <%= f.label(:DEA, "Email Address:", class: "sr-only") %>
-                    <%= f.text_field(:DEA, {class: "form-control mb-2 mr-sm-2", placeholder: "Email Address", :required => true}) %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:ExpLev, "Experienc Level:", class: "sr-only") %>
-                    <%= f.select :ExpLev, options_for_select([ "Select Level", "Beginer", "Intermediate", "Advanced" ], "Select Level"),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                  <td>
-                    <%= f.label(:DTS, "T-Shirt Size:", class: "sr-only") %>
-                    <%= f.select :DTS, options_for_select([["No T-Shirt", "NA"],["Small", "S"],["Medium", "M"],["Large", "L"],["X Large", "XL"],["XX Large", "XXL"],["XXX Large", "XXXL"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                </tr>
-                <!-- ECI -->
-                <tr>
-                  <th colspan="2">Emergncy Contact Information</th>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:ECFN, "First Name:",  class: "sr-only") %>
-                    <%= f.text_field("ECFN",{class: "form-control mb-2 mr-sm-2", placeholder: "First Name"}) %>
-                  </td>
-                  <td>
-                    <%= f.label(:ECLN, "Last Name:", class: "sr-only") %>
-                    <%= f.text_field("ECLN",{class: "form-control mb-2 mr-sm-2", placeholder: "Last Name"}) %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:ECCP, "Phone Number:", class: "sr-only") %>
-                    <%= f.text_field('ECCP', {class: "form-control mb-2 mr-sm-2", placeholder: "Phone Number"}) %>
-                  </td>
-                  <td>
-                    <div class="form-check">
-                      <%= f.check_box("ECT", {class: "form-check-input"}, "yes", "no")  %>
-                      Can Accept Text Message
-                    </div>
-                  </td>
-                </tr>
-                <!-- Passenger Informaton -->
-                <tr>
-                  <th colspan="2">Passenger Informaton</th>
-                </tr>
-                <%= f.fields_for :passengers do |ff| %>
-                <tr>
-                  <td>
-                    <%= ff.label(:fname, "First Name:", class: "sr-only") %>
-                    <%= ff.text_field(:fname, {class: "form-control mb-2 mr-sm-2", placeholder: "Passenger First Name"}) %>
-                  </td>
-                  <td>
-                    <%= ff.label(:lname, "Last Name:", class: "sr-only") %>
-                    <%= ff.text_field(:lname, {class: "form-control mb-2 mr-sm-2", placeholder: "Passenger Last Name"}) %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= ff.label(:age, "Passenger Age:", class: "sr-only") %>
-                    <%= ff.select :age, options_for_select([["Select Age", "0"],["under  10", "0"],["Over - 10", "1"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                  <td>
-                    <%= ff.label(:tshirt, "T-Shirt Size:", class: "sr-only") %>
-                    <%= ff.select :tshirt, options_for_select([["No T-Shirt", "NA"],["Small", "S"],["Medium", "M"],["Large", "L"],["X Large", "XL"],["XX Large", "XXL"],["XXX Large", "XXXL"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                </tr>
-                <% end %>
-                <tr>
-                  <th colspan="2">Event Infromation</th>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:FLH, "Friday Lunch   Ham:", class: "sr-only") %>
-                    <%= f.select :FLH, options_for_select([["No Ham Lunch", "0"],["Ham - 1 Person", "1"],["Ham - 2 Person", "2"],["Ham - 3 Person", "3"],["Ham - 4 Person", "4"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                  <td>
-                    <%= f.label(:FLT, "Friday Lunch Turkey:", class: "sr-only") %>
-                    <%= f.select :FLT, options_for_select([["No Turkey Lunch", "0"],["Turkey - 1 Person", "1"],["Turkey - 2 Person", "2"],["Turkey - 3 Person", "3"],["Turkey - 4 Person", "4"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:SLH, "Saturday Lunch Ham:", class: "sr-only") %>
-                    <%= f.select :SLH, options_for_select([["No Ham Lunch", "0"],["Ham - 1 Person", "1"],["Ham - 2 Person", "2"],["Ham - 3 Person", "3"],["Ham - 4 Person", "4"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                  <td>
-                    <%= f.label(:SLT, "Saturday Lunch Turkey:", class: "sr-only") %>
-                    <%= f.select :SLT, options_for_select([["No Turkey Lunch", "0"],["Turkey - 1 Person", "1"],["Turkey - 2 Person", "2"],["Turkey - 3 Person", "3"],["Turkey - 4 Person", "4"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.label(:RD, "Riding Dates:", class: "sr-only") %>
-                    <%= f.select :RD, options_for_select([["All Dates", "All"],["August 9th", "Thursday"],["August 10th", "Friday"],["August 11th", "Saturday"],
-                            ["August 9 - 10", "Thursday & Friday"], ["August 10 - 11", "Friday & Saturday"]]),{}, {class: "form-control mb-2 mr-sm-2"} %>
-                  </td>
-                  <td class="text-right"><button type="submit" class="btn btn-lg btn-primary">Checkout</button></td>
-                </tr>
-              </table>
-            </div><!--table-responsive -->
-          </div><!-- col-11 -->
-        </div> <!-- row -->
-      <% end %>
+      <!-- Driver/passengers -->
+      <div class="row">
+        <div class="col-sm-9 offset-sm-1">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <h2 class="text-dark">Select driver and passengers:
+              <tr>
+                <td>
+                  <p>Click to add Driver: &nbsp;</p>
+                </td>
+                <td>
+                  <button
+                    class="snipcart-add-item"
+                    data-item-id="Driver"
+                    data-item-name="Driver"
+                    data-item-price="70.00"
+                    data-item-url="/riders"
+                    data-item-max-quantity="1"
+                    data-item-min-quantity="1"
+                    data-item-description="Select Type of Rider"
+                    data-item-custom1-required="true"
+                    data-item-custom2-name="Rider"
+                    data-item-custom2-options="Driver"
+                    data-item-custom3-options="true|false">
+                    Add To Cart
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Click to add Passengers: &nbsp;</p>
+                </td>
+                <td>
+                  <button
+                    class="snipcart-add-item"
+                    data-item-id="Passengers"
+                    data-item-name="Passengers"
+                    data-item-price="70.00"
+                    data-item-url="/riders"
+                    data-item-max-quantity="3"
+                    data-item-min-quantity="0"
+                    data-item-description="Select Type of Rider"
+                    data-item-custom1-required="true"
+                    data-item-custom2-name="Rider"
+                    data-item-custom2-options="Passenger"
+                    data-item-custom3-options="true|false">
+                    Add To Cart
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lunch -->
+      <div class="row">
+        <div class="col-sm-9 offset-sm-1">
+          <h2>Select rider lunches:</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <tr>
+                <td>
+                  <p>Click to add your luches: &nbsp;</p>
+                </td>
+                <td>
+                  <button
+                  class="snipcart-add-item"
+                  data-item-id="lunch"
+                  data-item-name="Lunch"
+                  data-item-price="8.00"
+                  data-item-url="/rider"
+                  data-item-description="Select Type of Lunch"
+                  data-item-custom1-required="true"
+                  data-item-custom2-name="Type"
+                  data-item-custom2-options="Ham|Turkey"
+                  data-item-custom3-options="true|false">
+                  Add To Cart
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- T-Shirt -->
+      <div class="row">
+        <div class="col-sm-9 offset-sm-1">
+          <h2>Select rider T-Shirt size:</h2>
+          <p><span class="text-danger upercase"><em>Free t-shirts</em> </span><span class="text-info"> for registered riders.
+          Addtional T-Shirts can be purchesded at check-in based on availabitlity.</span></p>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <tr>
+                <td>
+                  <p>Click to add rider T-Shirt: &nbsp;</p>
+                </td>
+                <td>
+                  <button
+                      class="snipcart-add-item"
+                      data-item-id="tshirt"
+                      data-item-name="T-Shirts"
+                      data-item-price="0.00"
+                      data-item-url="/rider"
+                      data-item-description="Select T-Shirt Size"
+                      data-item-custom1-required="true"
+                      data-item-custom2-name="Size"
+                      data-item-custom2-options="X-Small|Small|Medium|Large|X_large"
+                      data-item-custom3-options="true|false">
+                      Add To Cart
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="snipcart-summary">
+          <p><a href="#" class="snipcart-user-email snipcart-user-profile">Customer dashboard</a> | <a href="#" class="snipcart-checkout">Checkout</a></p>
+      </div>
+      <div>
+          <h2>Cart Summery</h2>
+      </div>
+      <div class="snipcart-summary">
+          <p>Number of items: <span class="snipcart-total-items"></span></p>
+          <p>Total price: <span class="snipcart-total-price"></span></p>
+      </div>
+    </div>
+  </div>
+
+<!-- We have not been able to validate your order. Looks like some product prices might have changed since you added them to the cart.
+Please review your order and try again. -->
