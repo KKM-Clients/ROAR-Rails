@@ -1,0 +1,140 @@
+  <% title "Rider Registration" %>
+
+  <div class="row">
+    <div class="col-9">
+
+      <!-- Driver/passengers -->
+      <div class="row">
+        <div class="col-sm-9 offset-sm-1">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <h2 class="text-dark">Select driver and passengers:
+              <tr>
+                <td>
+                  <p>Click to add Driver: &nbsp;</p>
+                </td>
+                <td>
+                  <button
+                    class="snipcart-add-item"
+                    data-item-id="Driver"
+                    data-item-name="Driver"
+                    data-item-price="70.00"
+                    data-item-url="/riders"
+                    data-item-max-quantity="1"
+                    data-item-min-quantity="1"
+                    data-item-description="Select Type of Rider"
+                    data-item-custom1-required="true"
+                    data-item-custom2-name="Rider"
+                    data-item-custom2-options="Driver"
+                    data-item-custom3-options="true|false">
+                    Add To Cart
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Click to add Passengers: &nbsp;</p>
+                </td>
+                <td>
+                  <button
+                    class="snipcart-add-item"
+                    data-item-id="Passengers"
+                    data-item-name="Passengers"
+                    data-item-price="70.00"
+                    data-item-url="/riders"
+                    data-item-max-quantity="3"
+                    data-item-min-quantity="0"
+                    data-item-description="Select Type of Rider"
+                    data-item-custom1-required="true"
+                    data-item-custom2-name="Rider"
+                    data-item-custom2-options="Passenger"
+                    data-item-custom3-options="true|false">
+                    Add To Cart
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lunch -->
+      <div class="row">
+        <div class="col-sm-9 offset-sm-1">
+          <h2>Select rider lunches:</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <tr>
+                <td>
+                  <p>Click to add your luches: &nbsp;</p>
+                </td>
+                <td>
+                  <button
+                  class="snipcart-add-item"
+                  data-item-id="lunch"
+                  data-item-name="Lunch"
+                  data-item-price="8.00"
+                  data-item-url="/rider"
+                  data-item-description="Select Type of Lunch"
+                  data-item-custom1-required="true"
+                  data-item-custom2-name="Type"
+                  data-item-custom2-options="Ham|Turkey"
+                  data-item-custom3-options="true|false">
+                  Add To Cart
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- T-Shirt -->
+      <div class="row">
+        <div class="col-sm-9 offset-sm-1">
+          <h2>Select rider T-Shirt size:</h2>
+          <p><span class="text-danger upercase"><em>Free t-shirts</em> </span><span class="text-info"> for registered riders.
+          Addtional T-Shirts can be purchesded at check-in based on availabitlity.</span></p>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <tr>
+                <td>
+                  <p>Click to add rider T-Shirt: &nbsp;</p>
+                </td>
+                <td>
+                  <button
+                      class="snipcart-add-item"
+                      data-item-id="tshirt"
+                      data-item-name="T-Shirts"
+                      data-item-price="0.00"
+                      data-item-url="/rider"
+                      data-item-description="Select T-Shirt Size"
+                      data-item-custom1-required="true"
+                      data-item-custom2-name="Size"
+                      data-item-custom2-options="X-Small|Small|Medium|Large|X_large"
+                      data-item-custom3-options="true|false">
+                      Add To Cart
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="snipcart-summary">
+          <p><a href="#" class="snipcart-user-email snipcart-user-profile">Customer dashboard</a> | <a href="#" class="snipcart-checkout">Checkout</a></p>
+      </div>
+      <div>
+          <h2>Cart Summery</h2>
+      </div>
+      <div class="snipcart-summary">
+          <p>Number of items: <span class="snipcart-total-items"></span></p>
+          <p>Total price: <span class="snipcart-total-price"></span></p>
+      </div>
+    </div>
+  </div>
+
+<!-- We have not been able to validate your order. Looks like some product prices might have changed since you added them to the cart.
+Please review your order and try again. -->
