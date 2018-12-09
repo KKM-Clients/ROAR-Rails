@@ -10,7 +10,7 @@
   </script>
 
 
-  <title> ROAR - <%= content_for?(:title) ? yield(:title) : 'Rangely OHV Adventuer Ride' %> </title>
+  <title> ROAR - <%= content_for?(:title) ? yield(:title) : 'Rangely OHV Adventure Ride' %> </title>
 
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -19,13 +19,14 @@
   <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />
 
   <!-- print PDF of page -->
+  <%= javascript_include_tag 'application' %>
 
   <!-- Square -->
   <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
 
-  <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="YWUyNzIzNmQtODc4YS00NWU3LTljNjItNzU0NjhiYzMzNTgwNjM2Nzk5MDk3MDkyNjIyODQx"></script>
+  <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="YWUyNzIzNmQtODc4YS00NWU3LTljNjItNzU0NjhiYzMzNTgwNjM2Nzk5MDk3MDkyNjIyODQx" data-autopop="false"></script>
 
-  <%= javascript_include_tag 'application' %>
+
 
 
 
