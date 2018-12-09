@@ -25,9 +25,9 @@ module ROARR5
     # the framework and any gems in your application.
 
     # Setup authorization
-    SquareConnect.configure do |config|
+    ##SquareConnect.configure do |config|
       # Configure OAuth2 access token for authorization: oauth2
-      config.access_token = ENV["SQUARE_ACCESS_TOKEN"]
-    end
+      ##config.access_token = ENV["SQUARE_ACCESS_TOKEN"]
+    ##end
   end
 end

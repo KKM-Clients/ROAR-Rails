@@ -7,7 +7,7 @@ class RidersController < ApplicationController
 
   def new
     @rider = Rider.new
-    3.times { @rider.passengers.build }
+    ##3.times { @rider.passengers.build }
   end
 
   def create
@@ -36,33 +36,33 @@ class RidersController < ApplicationController
     @rider = Rider.last
 
     #number of riders
-    @pass_free = Passenger.where(:rider_id => @rider.id).where(:age => 0).count   #number of riders uner 10
-    @pass_pay =  Passenger.where(:rider_id =>   @rider.id).where(:age => 1).count+1  #number of riders over 10
+    ##@pass_free = Passenger.where(:rider_id => @rider.id).where(:age => 0).count   #number of riders uner 10
+    ##@pass_pay =  Passenger.where(:rider_id =>   @rider.id).where(:age => 1).count+1  #number of riders over 10
 
     #raise $pass_free.inspect
 
     #total rider cost
-    @trc = @pass_pay * 70     #total rider cost
+    ##@trc = @pass_pay * 70     #total rider cost
 
     #Set up to calculate lunches
-    flh = @rider.FLH
-    flt = @rider.FLT
-    slh = @rider.SLH
-    slt = @rider.SLT
+    ##flh = @rider.FLH
+    ##flt = @rider.FLT
+    ##slh = @rider.SLH
+    ##slt = @rider.SLT
 
     #total of all lunches
-    @lunch = flh + flt + slh + slt
+    ##@lunch = flh + flt + slh + slt
 
     #raise @lunch.inspect
 
 
     #total over all
-    @tlc = @lunch * 8             #total lunch cost
-    @Grandtotal = @trc + @tlc           #Grand total of rider + lunches
+    ##@tlc = @lunch * 8             #total lunch cost
+    ##@Grandtotal = @trc + @tlc           #Grand total of rider + lunches
   end
 
-  def rider_params
-    params.require(:rider).permit(:RRCW, :DFN, :DLN, :DMA, :DC, :DS, :DZ, :DCP, :DEA, :ECFN, :ECLN,
-    :ECCP, :ECT, :ExpLev, :RD, :FLH, :FLT, :SLH, :SLT, :DTS, :PT, passengers_attributes: [:fname, :lname, :age, :tshirt])
-  end
+  ##def rider_params
+    ##params.require(:rider).permit(:RRCW, :DFN, :DLN, :DMA, :DC, :DS, :DZ, :DCP, :DEA, :ECFN, :ECLN,
+    ##:ECCP, :ECT, :ExpLev, :RD, :FLH, :FLT, :SLH, :SLT, :DTS, :PT, passengers_attributes: [:fname, :lname, :age, :tshirt])
+  ##end
 end
