@@ -71,7 +71,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 
 #squarecheckout
-gem 'square_connect'
+#gem 'square_connect'
 
 ##Figaro ENV
 gem 'figaro'
