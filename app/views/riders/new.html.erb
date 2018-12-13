@@ -5,13 +5,15 @@
   <div class="col-8">
     <div class="row">
       <div class="col-9 offset-sm-1">
+        <p>Register all riders, lunches and t-shirts.</p>
+        <p>Upon checkout you can select the type of lunch and T-Shirt size.</p>
         <!-- driver & passengers -->
         <h2>Select Riders</h2>
         <div class="table-responsive">
           <table class="table table-bordered">
             <tr>
               <td>
-                <p>Click to add driver:</p>
+                <p>All Registerations must have a driver:</p>
               </td>
               <td>
                 <button
@@ -19,7 +21,7 @@
                   data-item-id="driver"
                   data-item-name="Driver"
                   data-item-price="70.00"
-                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new#!/"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
                   data-item-description="OHV Driver"
                   data-item-custom2-options="Driver"
                   data-item-custom2-value="Driver"
@@ -31,7 +33,7 @@
             </tr>
             <tr>
               <td>
-                <p>Click to add Passengers:</p>
+                <p>YOu can add up to three Passengers:</p>
               </td>
               <td>
                 <button
@@ -58,7 +60,7 @@
           <table class="table table-bordered">
             <tr>
               <td>
-                <p>Click to add lunch:</p>
+                <p>Add up to four (4) lunches:</p>
               </td>
               <td>
                 <button
@@ -70,7 +72,9 @@
                     data-item-max-quantity="4"
                     data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new/riders/new"
                     data-item-description="Riders Lunches"
-                    data-item-custom2-options="Ham|Turkey"
+                    data-item-custom2-name="Lunches"
+                    data-item-custom2-options="Select|Ham|Turkey"
+                    data-tiem-custom2-value="Select"
                     data-item-custom2-value="lunch">
                     Add Lunch
                 </button>
@@ -79,14 +83,14 @@
           </table>
         </div>
 
-        <!-- Lunch -->
+        <!-- T-Shirts -->
         <h2>Select T-Shirts:</h2>
         <p><span class="text-danger text-uppercase"><em>Free T-Shirt</em></span> for resitered riders. Additional T-Shirts can be purchesed at check-in.</p>
         <div class="table-responsive">
           <table class="table table-bordered">
             <tr>
               <td>
-                <p>Click to add T-Shirt:</p>
+                <p>Add up to four (4) T-Shirts:</p>
               </td>
               <td>
                 <button
@@ -98,7 +102,9 @@
                     data-item-max-quantity="4"
                     data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new/riders/new"
                     data-item-description="Rider T-Shirts"
-                    data-item-custom2-options="X-Small|Small|Medium|Large|X-Large"
+                    data-item-custom2-name="T-Shirts"
+                    data-item-custom2-options="Select|X-Small|Small|Medium|Large|X-Large"
+                    data-tiem-custom2-value="Select"
                     data-item-custom2-value="tshirt">
                     Add T-Shirt
                 </button>
@@ -113,7 +119,9 @@
 
   <div class="col-4">
     <div class="snipcart-summary">
-        <a href="#" class="snipcart-user-email snipcart-user-profile">Customer dashboard</a> | <a href="#" class="snipcart-checkout">Checkout</a>
+        <a href="#" class="snipcart-user-email snipcart-user-profile">Customer dashboard</a> |
+        <a href="#" class="snipcart-checkout"><%= image_tag("checkout.png", :alt => "Checkout", :class => "img-fluid") %></a>
+        <!-- <a href="#" class="snipcart-checkout">Checkout</a> -->
     </div>
     <hr />
     <div>
