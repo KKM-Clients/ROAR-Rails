@@ -1,38 +1,38 @@
 <% title "Rider Registration" %>
 
-  <h2 class="text-center">Join us in Rangely Colorado  <br /> <%= Time.current.year %> Rangely OHV Adventure Rally.</h2>
+  <h2 class="text-center">Join us in Rangely Colorado  <br /> <%= Time.current.year+1 %> Rangely OHV Adventure Rally.</h2>
   <p>&nbsp;</p>
 
   <p>Registration is now
-  <% if @date == @closed  %>
+  <% if @date == @roar_closed  %>
     closed. You must register at the event.
   <% else %>
-    open online through August 6th, after that you may register at the event.
+    open online through May 1st, after that you may register at the event.
   <% end %>
   </p>
 
-  <p>Registration includes an event t-shirt, guided rides (optional), breakfast on Friday and Saturday, dinner on Friday and all events lised
-  on the schedule, uless noted. Sack lunches for Friday and Saturday can be orders as you register.</p>
+  <p>Registration includes an event t-shirt, guided rides (optional), breakfast on Friday and Saturday, dinner on Friday and all events listed
+  in the schedule, unless noted. Sack lunches for Friday and Saturday can be ordered on the registration form at an additional charge.</p>
 
   <div class="row bg-light p-2">
     <div class="col">
       <p><strong>Register Early:</strong></p>
       <ul>
-        <li>Each rider 10 years and older - $70</li>
+        <li>Each rider 10 years and older - $65</li>
         <li>Childern under the age of 10 are free</li>
       </ul>
     </div>
     <div class="col">
-      <p><strong>After July 31st:</strong></p>
+      <p><strong>After April 25th:</strong></p>
       <ul>
-        <li>Each Rider 10 years of age and orlder - $75, and T-Shirt is not guaranteed</li>
+        <li>Each Rider 10 years of age and orlder - $70, and T-Shirt is not guaranteed</li>
       </ul>
     </div>
   </div>
 
   <p>&nbsp;</p>
 
-<% if @date == @closed  %>
+<% if @date == @roar_closed  %>
   <h3 class="text-center">Online Registration is now Closed. You may still register at the event.</h3>
 <% else %>
   <p>Please read and agree to the <strong><%= link_to "Rules & Regulation", rules_regs_url, :title => "Must read Ruls & Regulations" %></strong>

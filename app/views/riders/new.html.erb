@@ -1,82 +1,190 @@
 
 <% title "Rider Registration" %>
 
+<p>Thank you for joining us in Rangely Colorado May 3 - 5 for the <%= Time.current.year %> Rangely OHV Adventure Rally.</p>
+
+<p>Click the items below to register you driver and passengers. Upon checkout you will be asked for additional information.</p>
+
 <div class="row">
   <div class="col-8">
     <div class="row">
       <div class="col-9 offset-sm-1">
-        <p>Register all riders, lunches and t-shirts.</p>
-        <p>Upon checkout you can select the type of lunch and T-Shirt size.</p>
+
         <!-- driver & passengers -->
-        <h2>Select Riders</h2>
+        <h2>Register Riders</h2>
         <div class="table-responsive">
           <table class="table table-bordered">
             <tr>
               <td>
-                <p>All Registerations must have a driver:</p>
+                <p>Register a driver:</p>
               </td>
               <td>
                 <button
                   class="snipcart-add-item"
                   data-item-id="driver"
                   data-item-name="Driver"
-                  data-item-price="70.00"
+                  data-item-price="<% if $date <= $roar_early_reg %> 65.00 <% else %> 70 <% end %>"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="1"
                   data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
                   data-item-description="OHV Driver"
-                  data-item-custom2-options="Driver"
-                  data-item-custom2-value="Driver"
-                  data-item-max-quantity="1"
-                  data-item-min-quantity="1">
-                  Add Driver
+
+                  data-item-custom1-options="Driver"
+                  data-item-custom1-value="Driver"
+
+                  data-item-custom2-name="First Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Last Name"
+                  data-item-custom3-required="true"
+
+                  data-item-custom4-name="Street Address"
+                  data-item-custom4-required="true"
+
+                  data-item-custom5-name="City"
+                  data-item-custom5-required="true"
+
+                  data-item-custom6-name="State"
+                  data-item-custom6-required="true"
+
+                  data-item-custom7-name="Zip Code"
+                  data-item-custom7-required="true"
+
+                  data-item-custom8-name="Phone Number"
+                  data-item-custom8-required="true"
+
+                  data-item-custom9-name="Email Address"
+                  data-item-custom9-required="true"
+
+                  data-item-custom10-name="Cell Phone Number while you are at the event"
+                  data-item-custom10-required="true"
+
+                  data-item-custom11-name="Emergency Contact Phone Number"
+                  data-item-custom11-required="true"
+
+                  data-item-custom12-name="Experience Level"
+                  data-item-custom12-options="Select|Beginner|Intermediate|Advanced"
+                  date-item-custom12-value="Select"
+                  data-item-custom12-required="true"
+
+                  data-item-custom13-name="Select Days you will be riding"
+                  data-item-custom13-options="Select|Friday, May 3|Saturday, May 4|Sunday, May 5"
+                  data-item-custom13-value="Select"
+                  data-item-custom13-required="true">
+                  Add your Driver
                 </button>
               </td>
             </tr>
             <tr>
               <td>
-                <p>YOu can add up to three Passengers:</p>
+                <p>Register Passanger(s):</p>
               </td>
               <td>
                 <button
-                    class="snipcart-add-item"
-                    data-item-id="passengers"
-                    data-item-name="Passengers"
-                    data-item-price="70.00"
-                    data-item-min-quantity="0"
-                    data-item-max-quantity="3"
-                    data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
-                    data-item-description="Add up to three (3) passengers"
-                    data-item-custom2-options="Passengers"
-                    data-item-custom2-value="Passengers">
-                    Add Passengers
+                  class="snipcart-add-item"
+                  data-item-id="passangers"
+                  data-item-name="Passangers"
+                  data-item-price="65.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Passengers/Riders"
+
+                  data-item-custom2-name="First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passanger is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+                  Add Passanger/Rider
                 </button>
               </td>
             </tr>
+
           </table>
         </div>
 
         <!-- Lunch -->
-        <h2>Select Lunches:</h2>
+        <h2>Rider Lunches:</h2>
+        <p class="text-info"><span class="text-uppercase">To Go lunche orders for Friday & Saturday</apsn> (optional)</p>
+        <p>To-Go Lunches are available for order. Options for both days include a Ham or Turkey sandwich. Both options come with chips, fruit,
+        dessert and a soda.</p>
+
         <div class="table-responsive">
           <table class="table table-bordered">
             <tr>
               <td>
-                <p>Add up to four (4) lunches:</p>
+                <p>Friday Lunch - Ham:</p>
               </td>
               <td>
                 <button
                     class="snipcart-add-item"
-                    data-item-id="lunch"
-                    data-item-name="Riders Lunches"
+                    data-item-id="friday-lunch-ham"
+                    data-item-name="Friday Lunch - Ham: $8.00"
                     data-item-price="8.00"
                     data-item-min-quantity="0"
                     data-item-max-quantity="4"
                     data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
-                    data-item-description="Riders Lunches"
-                    data-item-custom2-name="Lunches"
-                    data-item-custom2-options="Select|Ham|Turkey"
-                    data-tiem-custom2-value="Select"
-                    data-item-custom2-value="lunch">
-                    Add Lunch
+                    data-item-description="Includes: chips, fruit, dessert & soda">
+                    Add Friday Ham Lunch
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Friday Lunch - Turkey:</p>
+              </td>
+              <td>
+                <button
+                    class="snipcart-add-item"
+                    data-item-id="friday-lunch-turkey"
+                    data-item-name="Friday Lunch - Turkey: $8.00"
+                    data-item-price="8.00"
+                    data-item-min-quantity="0"
+                    data-item-max-quantity="4"
+                    data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                    data-item-description="Includes: chips, fruit, dessert & soda">
+                    Add Friday Turkey Lunch
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Saturday Lunch - Ham:</p>
+              </td>
+              <td>
+                <button
+                    class="snipcart-add-item"
+                    data-item-id="saturday-lunch-ham"
+                    data-item-name="Saturday Lunch - Ham: $8.00"
+                    data-item-price="8.00"
+                    data-item-min-quantity="0"
+                    data-item-max-quantity="4"
+                    data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                    data-item-description="Includes: chips, fruit, dessert & soda">
+                    Add Saturday Ham Lunch
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Saturday Lunch - Turkey:</p>
+              </td>
+              <td>
+                <button
+                    class="snipcart-add-item"
+                    data-item-id="saturday-lunch-turkey"
+                    data-item-name="Saturday Lunch - Turkey: $8.00"
+                    data-item-price="8.00"
+                    data-item-min-quantity="0"
+                    data-item-max-quantity="4"
+                    data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                    data-item-description="Includes: chips, fruit, dessert & soda">
+                    Add Saturday Turkey Lunch
                 </button>
               </td>
             </tr>
@@ -84,31 +192,29 @@
         </div>
 
         <!-- T-Shirts -->
-        <h2>Select T-Shirts:</h2>
-        <p><span class="text-danger text-uppercase"><em>Free T-Shirt</em></span> for resitered riders. Additional T-Shirts can be purchesed at check-in.</p>
+        <h2>Rider T-Shirts:</h2>
+        <p>
         <div class="table-responsive">
           <table class="table table-bordered">
             <tr>
               <td>
-                <p>Add up to four (4) T-Shirts:</p>
-              </td>
+                <p>Select Rider T-shires:
               <td>
                 <button
                     class="snipcart-add-item"
-                    data-item-id="tshirt"
-                    data-item-name="T-Shirts"
-                    data-item-price="0.00"
+                    data-item-id="t-shirt"
+                    data-item-name="T-Shirts:  $12.00"
+                    data-item-price="12.00"
                     data-item-min-quantity="0"
                     data-item-max-quantity="4"
                     data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
-                    data-item-description="Rider T-Shirts"
-                    data-item-custom2-name="T-Shirts"
-                    data-item-custom2-options="Select|X-Small|Small|Medium|Large|X-Large"
-                    data-tiem-custom2-value="Select"
-                    data-item-custom2-value="tshirt">
-                    Add T-Shirt
+                    data-item-description="After April 25th, t-shirt order is not guaranteed."
+
+                    data-item-custom5-name="Select T-shirt size"
+                    data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                    date-item-custom5-value="Select">
+                    Add Rider T-Shits
                 </button>
-              </td>
               </td>
             </tr>
           </table>

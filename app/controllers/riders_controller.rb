@@ -2,7 +2,7 @@ class RidersController < ApplicationController
   def index
       @date = Date.today.to_s
 
-      @closed = "2018-008-06"
+      @closed = "2019-05-01"
   end
 
   def new
