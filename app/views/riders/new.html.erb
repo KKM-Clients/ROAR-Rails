@@ -11,105 +11,651 @@
       <div class="col-9 offset-sm-1">
 
         <!-- driver & passengers -->
-        <h2>Register Riders</h2>
+        <h2>Register Buggies</h2>
         <div class="table-responsive">
+          <!-- Table Buggy One -->
           <table class="table table-bordered">
             <tr>
-              <td>
-                <p>Register a driver:</p>
+              <td rowspan="4" class="align-middle">
+                <p>Register Buggy One (1):</p>
               </td>
               <td>
+                <!-- Driver one -->
                 <button
                   class="snipcart-add-item"
-                  data-item-id="driver"
-                  data-item-name="Driver"
+                  data-item-id="buggy-One-driver"
+                  data-item-name="Buggy One - Driver"
                   data-item-price="<% if $date <= $roar_early_reg %> 65.00 <% else %> 70 <% end %>"
                   data-item-max-quantity="1"
                   data-item-min-quantity="1"
                   data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
-                  data-item-description="OHV Driver"
+                  data-item-description="Register Driver"
 
-                  data-item-custom1-options="Driver"
-                  data-item-custom1-value="Driver"
-
-                  data-item-custom2-name="First Name"
+                  data-item-custom2-name="Driver First & Last Name"
                   data-item-custom2-required="true"
 
-                  data-item-custom3-name="Last Name"
+                  data-item-custom3-name="Driver Street Address"
                   data-item-custom3-required="true"
 
-                  data-item-custom4-name="Street Address"
+                  data-item-custom4-name="Driver City"
                   data-item-custom4-required="true"
 
-                  data-item-custom5-name="City"
+                  data-item-custom5-name="Driver State"
                   data-item-custom5-required="true"
 
-                  data-item-custom6-name="State"
+                  data-item-custom6-name="Driver Zip Code"
                   data-item-custom6-required="true"
 
-                  data-item-custom7-name="Zip Code"
+                  data-item-custom7-name="Driver Phone Number"
                   data-item-custom7-required="true"
 
-                  data-item-custom8-name="Phone Number"
+                  data-item-custom8-name="Driver Email Address"
                   data-item-custom8-required="true"
 
-                  data-item-custom9-name="Email Address"
+                  data-item-custom9-name="Cell Phone Number while you are at the event"
                   data-item-custom9-required="true"
 
-                  data-item-custom10-name="Cell Phone Number while you are at the event"
+                  data-item-custom10-name="Emergency Contact Phone Number"
                   data-item-custom10-required="true"
 
-                  data-item-custom11-name="Emergency Contact Phone Number"
+                  data-item-custom11-name="Driver Experience Level"
+                  data-item-custom11-options="Select|Beginner|Intermediate|Advanced"
+                  date-item-custom11-value="Select"
                   data-item-custom11-required="true"
 
-                  data-item-custom12-name="Experience Level"
-                  data-item-custom12-options="Select|Beginner|Intermediate|Advanced"
-                  date-item-custom12-value="Select"
-                  data-item-custom12-required="true"
+                  data-item-custom12-lable="Check Date you are ridding:"
 
-                  data-item-custom13-name="Select Days you will be riding"
-                  data-item-custom13-options="Select|Friday, May 3|Saturday, May 4|Sunday, May 5"
-                  data-item-custom13-value="Select"
-                  data-item-custom13-required="true">
-                  Add your Driver
+                  data-item-custom13-name="Thrusday May 3rd"
+                  data-item-custom13-options="true|false"
+
+                  data-item-custom14-name="Friday May 4th"
+                  data-item-custom14-options="true|false"
+
+                  data-item-custom15-name="Saturday May 5th"
+                  data-item-custom15-options="true|false"
+
+                  data-item-custom16-name="Driver T-shirt size"
+                  data-item-custom16-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom16-value="Select">
+                  Add Driver
                 </button>
               </td>
             </tr>
+            <!-- Buggy One Pass1 -->
             <tr>
-              <td>
-                <p>Register Passanger(s):</p>
-              </td>
               <td>
                 <button
                   class="snipcart-add-item"
-                  data-item-id="passangers"
-                  data-item-name="Passangers"
-                  data-item-price="65.00"
+                  data-item-id="b1p1"
+                  data-item-name="Buggy One: Passenger"
+                  data-item-price="0.00"
                   data-item-max-quantity="1"
                   data-item-min-quantity="0"
                   data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
-                  data-item-description="Passengers/Riders"
+                  data-item-description="Register Passenger - One (1)"
 
-                  data-item-custom2-name="First & Last Name"
+
+                  data-item-custom2-name="Passenger(1) First & Last Name"
                   data-item-custom2-required="true"
 
-                  data-item-custom3-name="Email Address"
+                  data-item-custom3-name="Passenger(1) Email Address"
                   data-item-custom3-required="false"
 
-                  data-item-custom4-name="Check If Passanger is under age 10"
+                  data-item-custom4-name="Check If Passenger(1) is under age 10"
                   data-item-custom4-options="true|false"
 
                   data-item-stackable="true">
-                  Add Passanger/Rider
+
+                  <!-- data-item-custom5-name="Passenger(1) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - One
                 </button>
               </td>
             </tr>
+            <!-- Buggy One Pass2 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b1p2"
+                  data-item-name="Buggy One: Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger - Two (2)"
 
+
+                  data-item-custom2-name="Passenger(2) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(2) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(2) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+
+                  <!-- data-item-custom5-name="Passenger(2) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - Two
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy One Pass3 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b1p3"
+                  data-item-name="Buggy One: Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger Three (3)"
+
+
+                  data-item-custom2-name="Passenger(3) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(3) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(3) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+
+                  <!-- data-item-custom5-name="Passenger(2) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - Three
+                </button>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Table Buggy Two -->
+          <table class="table table-bordered">
+            <tr>
+              <td rowspan="4" class="align-middle">
+                <p>Register Buggy Two (2):</p>
+              </td>
+              <td>
+                <!-- Driver one -->
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b2d"
+                  data-item-name="Buggy Two"
+                  data-item-price="<% if $date <= $roar_early_reg %> 65.00 <% else %> 70 <% end %>"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="1"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Driver"
+
+                  data-item-custom2-name="Driver First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Driver Street Address"
+                  data-item-custom3-required="true"
+
+                  data-item-custom4-name="Driver City"
+                  data-item-custom4-required="true"
+
+                  data-item-custom5-name="Driver State"
+                  data-item-custom5-required="true"
+
+                  data-item-custom6-name="Driver Zip Code"
+                  data-item-custom6-required="true"
+
+                  data-item-custom7-name="Driver Phone Number"
+                  data-item-custom7-required="true"
+
+                  data-item-custom8-name="Driver Email Address"
+                  data-item-custom8-required="true"
+
+                  data-item-custom9-name="Cell Phone Number while you are at the event"
+                  data-item-custom9-required="true"
+
+                  data-item-custom10-name="Emergency Contact Phone Number"
+                  data-item-custom10-required="true"
+
+                  data-item-custom11-name="Driver Experience Level"
+                  data-item-custom11-options="Select|Beginner|Intermediate|Advanced"
+                  date-item-custom11-value="Select"
+                  data-item-custom11-required="true"
+
+                  data-item-custom12-name="Select Days you will be riding"
+                  data-item-custom12-options="Select|Friday, May 3|Saturday, May 4|Sunday, May 5"
+                  data-item-custom12-value="Select"
+                  data-item-custom12-required="true"
+
+                  data-item-custom13-name="Driver T-shirt size"
+                  data-item-custom13-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom13-value="Select">
+                  Add Driver
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Two Pass1 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b2p1"
+                  data-item-name="Buggy Two - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger One (1)"
+
+                  data-item-custom2-name="Passenger(1) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(1) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(1) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+
+                  <!-- data-item-custom5-name="Passenger(1) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - One
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Two Pass2 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b2p2"
+                  data-item-name="Buggy Two - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger Two (2)"
+
+
+                  data-item-custom2-name="Passenger(2) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(2) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(2) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+
+                  <!-- data-item-custom5-name="Passenger(2) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - Two
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Two Pass3 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b2p3"
+                  data-item-name="Buggy Two - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger Three (3)"
+
+                  data-item-custom2-name="Passenger(3) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(3) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(3) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+
+                  <!-- data-item-custom5-name="Passenger(2) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - Three
+                </button>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Table Buggy Three -->
+          <table class="table table-bordered">
+            <tr>
+              <td rowspan="4" class="align-middle">
+                <p>Register Buggy Three (3):</p>
+              </td>
+              <td>
+                <!-- Driver Three -->
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b3d"
+                  data-item-name="Buggy Three"
+                  data-item-price="<% if $date <= $roar_early_reg %> 65.00 <% else %> 70 <% end %>"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="1"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Driver"
+
+                  data-item-custom2-name="Driver First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Driver Street Address"
+                  data-item-custom3-required="true"
+
+                  data-item-custom4-name="Driver City"
+                  data-item-custom4-required="true"
+
+                  data-item-custom5-name="Driver State"
+                  data-item-custom5-required="true"
+
+                  data-item-custom6-name="Driver Zip Code"
+                  data-item-custom6-required="true"
+
+                  data-item-custom7-name="Driver Phone Number"
+                  data-item-custom7-required="true"
+
+                  data-item-custom8-name="Driver Email Address"
+                  data-item-custom8-required="true"
+
+                  data-item-custom9-name="Cell Phone Number while you are at the event"
+                  data-item-custom9-required="true"
+
+                  data-item-custom10-name="Emergency Contact Phone Number"
+                  data-item-custom10-required="true"
+
+                  data-item-custom11-name="Driver Experience Level"
+                  data-item-custom11-options="Select|Beginner|Intermediate|Advanced"
+                  date-item-custom11-value="Select"
+                  data-item-custom11-required="true"
+
+                  data-item-custom12-name="Select Days you will be riding"
+                  data-item-custom12-options="Select|Friday, May 3|Saturday, May 4|Sunday, May 5"
+                  data-item-custom12-value="Select"
+                  data-item-custom12-required="true"
+
+                  data-item-custom13-name="Driver T-shirt size"
+                  data-item-custom13-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom13-value="Select">
+                  Add Driver
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Three Pass1 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b3p1"
+                  data-item-name="Buggy Three - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenge One (1)"
+
+                  data-item-custom2-name="Passenger(1) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(1) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(1) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+
+                  <!-- data-item-custom5-name="Passenger(1) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - One
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Three Pass2 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b3p2"
+                  data-item-name="Buggy Three - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger Two (2)"
+
+                  data-item-custom2-name="Passenger(2) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(2) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(2) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+
+                  <!-- data-item-custom5-name="Passenger(2) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - Two
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Three Pass3 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b3p3"
+                  data-item-name="Buggy Three - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger Three (3)"
+
+
+                  data-item-custom2-name="Passenger(3) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(3) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(3) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true">
+
+                  <!-- data-item-custom5-name="Passenger(2) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select" -->
+                  Add Register Passenger - Three
+                </button>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Table Buggy Four -->
+          <table class="table table-bordered">
+            <tr>
+              <td rowspan="4" class="align-middle">
+                <p>Register Buggy Four (4):</p>
+              </td>
+              <td>
+                <!-- Driver Three -->
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b4d"
+                  data-item-name="Buggy Four"
+                  data-item-price="<% if $date <= $roar_early_reg %> 65.00 <% else %> 70 <% end %>"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="1"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Driver"
+
+                  data-item-custom2-name="Driver First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Driver Street Address"
+                  data-item-custom3-required="true"
+
+                  data-item-custom4-name="Driver City"
+                  data-item-custom4-required="true"
+
+                  data-item-custom5-name="Driver State"
+                  data-item-custom5-required="true"
+
+                  data-item-custom6-name="Driver Zip Code"
+                  data-item-custom6-required="true"
+
+                  data-item-custom7-name="Driver Phone Number"
+                  data-item-custom7-required="true"
+
+                  data-item-custom8-name="Driver Email Address"
+                  data-item-custom8-required="true"
+
+                  data-item-custom9-name="Cell Phone Number while you are at the event"
+                  data-item-custom9-required="true"
+
+                  data-item-custom10-name="Emergency Contact Phone Number"
+                  data-item-custom10-required="true"
+
+                  data-item-custom11-name="Driver Experience Level"
+                  data-item-custom11-options="Select|Beginner|Intermediate|Advanced"
+                  date-item-custom11-value="Select"
+                  data-item-custom11-required="true"
+
+                  data-item-custom12-name="Select Days you will be riding"
+                  data-item-custom12-options="Select|Friday, May 3|Saturday, May 4|Sunday, May 5"
+                  data-item-custom12-value="Select"
+                  data-item-custom12-required="true"
+
+                  data-item-custom13-name="Driver T-shirt size"
+                  data-item-custom13-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom13-value="Select">
+                  Add Driver
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Four Pass1 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b4p1"
+                  data-item-name="Buggy Four - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger One (1)"
+
+                  data-item-custom2-name="Passenger(1) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(1) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(1) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true"
+
+                  data-item-custom5-name="Passenger(1) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select">
+                  Add Register Passenger - One
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Four Pass2 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b4p2"
+                  data-item-name="Buggy Four - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger Two (2)"
+
+                  data-item-custom2-name="Passenger(2) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(2) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(2) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true"
+
+                  data-item-custom5-name="Passenger(2) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select">
+                  Add Register Passenger - Two
+                </button>
+              </td>
+            </tr>
+            <!-- Buggy Four Pass3 -->
+            <tr>
+              <td>
+                <button
+                  class="snipcart-add-item"
+                  data-item-id="b4p4"
+                  data-item-name="Buggy Four - Passenger"
+                  data-item-price="0.00"
+                  data-item-max-quantity="1"
+                  data-item-min-quantity="0"
+                  data-item-url="https://boiling-spire-21101.herokuapp.com/riders/new"
+                  data-item-description="Register Passenger Three (3)"
+
+
+                  data-item-custom2-name="Passenger(3) First & Last Name"
+                  data-item-custom2-required="true"
+
+                  data-item-custom3-name="Passenger(3) Email Address"
+                  data-item-custom3-required="false"
+
+                  data-item-custom4-name="Check If Passenger(3) is under age 10"
+                  data-item-custom4-options="true|false"
+
+                  data-item-stackable="true"
+
+                  data-item-custom5-name="Passenger(3) T-shirt size"
+                  data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
+                  date-item-custom5-value="Select">
+                  Add Register Passenger - Three
+                </button>
+              </td>
+            </tr>
           </table>
         </div>
 
         <!-- Lunch -->
-        <h2>Rider Lunches:</h2>
+        <h2>Optional Lunches:</h2>
         <p class="text-info"><span class="text-uppercase">To Go lunche orders for Friday & Saturday</apsn> (optional)</p>
         <p>To-Go Lunches are available for order. Options for both days include a Ham or Turkey sandwich. Both options come with chips, fruit,
         dessert and a soda.</p>
@@ -192,13 +738,14 @@
         </div>
 
         <!-- T-Shirts -->
-        <h2>Rider T-Shirts:</h2>
+        <h2>Additional T-Shirts:</h2>
+        <p>T-Shirts cost $12 per rider. After April 25 base on availablity.</p>
         <p>
         <div class="table-responsive">
           <table class="table table-bordered">
             <tr>
               <td>
-                <p>Select Rider T-shires:
+                <p>Additional T-shires:
               <td>
                 <button
                     class="snipcart-add-item"
@@ -213,7 +760,7 @@
                     data-item-custom5-name="Select T-shirt size"
                     data-item-custom5-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
                     date-item-custom5-value="Select">
-                    Add Rider T-Shits
+                    Add Additional T-Shits
                 </button>
               </td>
             </tr>
