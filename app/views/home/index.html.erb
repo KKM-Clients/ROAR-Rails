@@ -21,7 +21,9 @@
                             <div class="title__description"></div>
 
                             <!-- Options btn color: .btn-success | .btn-info | .btn-warning | .btn-danger | .btn-primary -->
-                            <div class="title__action" <% if $roar_closed < $date %>hidden<% end %> ><%= link_to "Register Now for ROAR 2018", "https://www.eventbrite.com/e/rangely-ohv-adventure-rally-roar-tickets-46452798571", :class => "btn btn-lg btn-info", :target => "_blank" %><p hidden>Register Now ROAR 2018</div>
+                            <div class="title__action" <% if $roar_closed < $date %>hidden<% end %> ><%= link_to "Register Now for ROAR 2018", "https://www.eventbrite.com/e/rangely-ohv-adventure-rally-roar-tickets-46452798571", :class => "btn btn-lg btn-info", :target => "_blank" %><p hidden>Register Now ROAR
+
+<%= Time.current.year %></div>
                         </div>
                         <!-- .title-01 -->
                     </div>
