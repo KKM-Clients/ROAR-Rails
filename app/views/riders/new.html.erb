@@ -17,16 +17,16 @@
           <table class="table table-bordered">
             <tr>
               <td rowspan="4" class="align-middle">
-                <p>Register Buggy One (1):</p>
+                <p>Register Buggies:</p>
               </td>
               <td>
                 <!-- Driver one -->
                 <button
                   class="snipcart-add-item"
-                  data-item-id="buggy-One-driver"
-                  data-item-name="Buggy One - Driver"
+                  data-item-id="buggy-driver"
+                  data-item-name="Buggy - Driver"
                   data-item-price="<% if $date <= $roar_early_reg %> 65.00 <% else %> 70 <% end %>"
-                  data-item-max-quantity="1"
+                  data-item-max-quantity="4"
                   data-item-min-quantity="1"
                   data-item-url="https://roartesting.herokuapp.com/riders/new"
                   data-item-description="Register Driver"
@@ -76,22 +76,25 @@
 
                   data-item-custom16-name="Driver T-shirt size"
                   data-item-custom16-options="Select|Small|Medium|Large|X-Large|XX-Large|XXX-Large"
-                  date-item-custom16-value="Select">
-                  Add Buggy One
+                  date-item-custom16-value="Select"
+
+                  data-item-stackable="false">
+
+                  Add A Buggy
                 </button>
               </td>
             </tr>
           </table>
 
           <!-- Table Buggy Two -->
-          <table class="table table-bordered">
+    <!--      <table class="table table-bordered">
             <tr>
               <td rowspan="4" class="align-middle">
                 <p>Register Buggy Two (2):</p>
               </td>
               <td>
                 <!-- Driver one -->
-                <button
+    <!--            <button
                   class="snipcart-add-item"
                   data-item-id="b2d"
                   data-item-name="Buggy Two"
@@ -148,14 +151,14 @@
           </table>
 
           <!-- Table Buggy Three -->
-          <table class="table table-bordered">
+  <!--        <table class="table table-bordered">
             <tr>
               <td rowspan="4" class="align-middle">
                 <p>Register Buggy Three (3):</p>
               </td>
               <td>
                 <!-- Driver Three -->
-                <button
+  <!--              <button
                   class="snipcart-add-item"
                   data-item-id="b3d"
                   data-item-name="Buggy Three"
@@ -212,14 +215,14 @@
           </table>
 
           <!-- Table Buggy Four -->
-          <table class="table table-bordered">
+  <!--        <table class="table table-bordered">
             <tr>
               <td rowspan="4" class="align-middle">
                 <p>Register Buggy Four (4):</p>
               </td>
               <td>
                 <!-- Driver Three -->
-                <button
+  <!--              <button
                   class="snipcart-add-item"
                   data-item-id="b4d"
                   data-item-name="Buggy Four"
@@ -272,7 +275,7 @@
                   Add Buggy Four
                 </button>
               </td>
-            </tr>
+            </tr> -->
           </table>
         </div>
 
@@ -393,20 +396,14 @@
   </div>
 
   <div class="col-4">
-    <div class="snipcart-summary">
-        <a href="#" class="snipcart-user-email snipcart-user-profile">Customer dashboard</a> |
-        <a href="#" class="snipcart-checkout"><%= image_tag("checkout.png", :alt => "Checkout", :class => "img-fluid") %> Checkout</a>
-        <!-- <a href="#" class="snipcart-checkout">Checkout</a> -->
-    </div>
-    <hr />
     <div>
       <h2>Cart Summery</h2>
     </div>
     <hr />
     <div class="snipcart-summary">
         <!-- <p>Number of items: <span class="snipcart-total-items"></span></p> -->
-        <p>Total price: <span class="snipcart-total-price"></span></p>
+        <h3 class="text-info">Total price: <span class="snipcart-total-price"></span></h3>
+        <h3><a href="#" class="snipcart-checkout"><%= image_tag("checkout.png", :alt => "Checkout", :class => "img-fluid") %> Checkout</a></h3>
     </div>
-    <hr />
   </div>
 </div>
