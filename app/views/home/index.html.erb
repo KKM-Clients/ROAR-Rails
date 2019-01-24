@@ -21,7 +21,7 @@
                             <div class="title__description"></div>
 
                             <!-- Options btn color: .btn-success | .btn-info | .btn-warning | .btn-danger | .btn-primary -->
-                            <div class="title__action" <% if $roar_closed < $date %>hidden<% end %> ><a href="https://docs.google.com/forms/d/e/1FAIpQLSdZOfVGV0lSZQU-d1IU-zgH_0GVGgUM2car3HmdM4JZsIBAjQ/viewform?vc=0&c=0&w=1" class = "btn btn-lg btn-info" target = "_blank">Register Now ROAR
+                            <div class="title__action" <% if $roar_closed < $date %>hidden<% end %> ><%= link_to "Register Now for ROAR 2019", riders_url, :class => "btn btn-lg btn-info" %><p hidden>Register Now ROAR
 <%= Time.current.year %></a></div>
                         </div>
                         <!-- .title-01 -->
